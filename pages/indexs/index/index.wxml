@@ -1,0 +1,99 @@
+<!--轮播图start  -->
+<swiper class='swiper-content' circular="{{circular}}" autoplay="{{autoplay}}"  bindchange="swiperChange" current="{{currentLength}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <image src="{{item.image}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='dots'>
+  <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+    <view class='dot {{index == currentLength ? "active" : ""}}'></view>
+  </block>
+</view>
+<!--轮播图end  -->
+<view class='specialist-head'>
+  <view class="fl">推荐专家</view>
+  <navigator class="fr" url="">更多></navigator>
+</view>
+<!--  专家轮播图start -->
+<swiper class='swiper-specialist'  display-multiple-items= "3" autoplay="{{autoplayList}}" bindchange="swiperChangeList" current="{{currentList}}" circular="true">
+  <block wx:for="{{listImgUrls}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <navigator url=''>
+        <view class='img'>
+          <image src="{{item.index_img}}" class="slide-image" />
+        </view>
+        <view class='name'>{{item.name}}</view>
+        <view class='label'>{{item.job}}</view>
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='dots line-to'>
+  <block wx:for="{{dotsList}}" wx:key="{{item.id}}">
+    <view class='dot {{index ==  currentList ? "active" : ""}}'></view>
+  </block>
+</view>
+<!--  专家轮播图end -->
+<view class='specialist-head'>
+  <view class="fl">产品分类</view>
+  <navigator class="fr" url="">更多></navigator>
+</view>
+<!-- 产品轮播图start -->
+<swiper class='swiper-product' display-multiple-items="2.4" autoplay="{{autoplayProduct}}" current="{{currentProduct}}">
+  <block wx:for="{{productUrls}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <navigator class='list' url=''>
+        <view class="img">
+          <image src="{{item.image}}" class="slide-image" />
+        </view>
+        <view class="china">{{item.name}}</view>
+        <view class='english'>{{item.name_en}}</view>
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 产品轮播图end -->
+<view class="line-to-bottom">
+  <view class='specialist-head'>
+    <view class="fl">筑享汇</view>
+    <navigator class="fr" url="">更多></navigator>
+  </view>
+  <view class="remit-list">
+    <view class="image">
+      <image src="{{indexHomeBig.min_img}}" />
+    </view>
+    <view class="text">{{indexHomeBig.title}}</view>
+    <view class="time-read clear">
+      <view class="fr time">{{indexHomeBig.inputtime}}</view>
+      <view class="fr look"><image src="../../../../utils/images/read.png" /> {{indexHomeBig.views}}</view>
+    </view>
+  </view>
+  <view wx:for="{{indexHomeList}}" wx:key="{{item.id}}">
+    <view class="case-list">
+      <view class="fl case-text">
+        <view class="text">{{item.title}}</view>
+        <view class='time-look'>
+          <view class="fl look"><image src="../../../../utils/images/read.png" /> {{item.views}}</view>
+          <view class="fl time">{{item.inputtime}}</view>
+        </view>
+      </view>
+      <view class="fr case-img">
+        <image src="{{item.min_img}}" />
+      </view>
+    </view>
+  </view>
+</view>
+<view class="platform">
+  <view class="city">智慧城市综合服务平台</view>
+  <view class="supplier ">智慧城市项目一站式解决方案提供商</view>
+  <navigator class='new' url="../../me/feedback/feedback">
+    <image src='../../../../utils/images/color-change.png' />
+    立即咨询
+  </navigator>
+</view>
+
+<import src="../../common/nav" />
+<template is="footerText" ></template>
+<!-- <template is="nav" data='{{...navItem}}'></template> -->

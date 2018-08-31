@@ -1,0 +1,66 @@
+.details .banner{
+  display: block;
+  width: 710rpx;
+  margin: 0 auto;
+  height: 405rpx;
+}
+.details-content{
+  font-size: 30rpx;
+  padding-top: 32rpx;
+  line-height: 52rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.look-read{
+  line-height: 44rpx;
+  opacity: 0.6;
+  font-size: 20rpx;
+  height: 44rpx;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.look-read .look{
+  position: relative;
+  padding-left: 42rpx;
+  padding-right: 26rpx;
+}
+.look-read .look image{
+  position: absolute;
+  left: 0;
+  top: 12rpx;
+  width: 34rpx;
+  height: 20rpx;
+}
+.details .text{
+  padding-top: 26rpx;
+  padding-bottom: 120rpx;
+}
+.pev-next{
+  height: 100rpx;
+}
+.list-fixed{
+  padding: 0 20rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+  right: 0;
+  background-color: #FFF;
+}
+.list-fixed .page{
+  color: #999999;
+  font-size: 20rpx;
+  text-align: center;
+  margin-top: 24rpx;
+  line-height: 44rpx;
+}
+.list-fixed .page image{
+  width: 15rpx;
+  height: 25rpx;
+  display: block;
+  margin: 0 auto;
+}

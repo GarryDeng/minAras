@@ -1,0 +1,65 @@
+<view class='tank-head'>
+  <view class='list-search'>
+    <input value='' placeholder='搜索专家相关关键词' placeholder-style='color:#dcdcdc;line-height:36rpx;font-size:24rpx;' />
+    <image src='../../../utils/images/search.png'></image>
+  </view>
+  <view class='nav-list'>
+    <view class='class-name' bindtap="clickClass">
+      分类
+      <image src='../../../utils/images/arrow-down.png'></image>
+    </view>
+    <view class='class-name' bindtap='clickSId'>
+      专业
+      <image src='../../../utils/images/arrow-down.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='list-content'>
+  <view class='team-list' wx:for="{{listData}}" wx:key="item.id">
+    <view class='content-tatol'>
+      <view class='img'>
+        <image src="{{item.index_img}}" class="slide-image"/>
+      </view>
+      <view class='label'>
+        <image src='../../../utils/images/color-label.png'></image>
+        {{item.cate_name}}
+      </view>
+      <view class='user-message'>
+        <view class='name'>{{item.name}}</view>
+        <view class='title'>{{item.job[0]?item.job[0]:''}}</view>
+        <view class='position'>{{item.job[1]?item.job[1]:''}}</view>
+      </view>
+      <view class='title-label'>
+        <view class='icon' wx:for="{{item.scfx}}" wx:key="{{item}}">{{item}}</view>
+      </view>
+    </view>
+    <navigator class='get-more' url=''>更多></navigator>
+  </view>
+</view>
+
+<view class='list-class' wx:if="{{classShow}}">
+  <view class='close' bindtap='closeClass'>取消</view>
+  <view class='affirm' bindtap='affirmClass'>确定</view>
+  <picker-view bindchange="bindChangeClass">
+    <picker-view-column>
+      <view wx:for="{{classList}}" wx:key="{{item.id}}">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+<view class='list-class-sid' wx:if="{{sIdShow}}" >
+  <view class='close' bindtap='closeSId'>取消</view>
+  <view class='affirm' bindtap='affirmSId'>确定</view>
+  <picker-view bindchange="bindChangeSlid">
+    <picker-view-column>
+      <view wx:for="{{sidList}}" wx:key="{{item.id}}">{{item.name}}</view>
+    </picker-view-column>
+    <!-- <picker-view-column>
+      <view wx:for="{{listName}}" wx:key="{{item.id}}">{{item.name}}</view>
+    </picker-view-column> -->
+  </picker-view>
+</view>
+
+<import src="../../common/nav" />
+<template is="footerText" ></template>

@@ -1,0 +1,94 @@
+@import "../../common/nav.wxss";
+.details-head{
+  position: relative;
+  background-color: #ebebeb;
+  padding-left: 262rpx;
+  min-height: 360rpx;
+}
+.details-head .box{
+  background-color: #FFF;
+  height: 250rpx;
+  width: 200rpx;
+  border-radius: 12rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 65rpx;
+}
+.details-head .box .icon{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  margin: 60rpx auto 0 auto;
+}
+.details-head .box .title{
+  padding-top: 72rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 1em;
+}
+.details-head .head-message{
+  padding-top: 64rpx;
+}
+.details-head .head-message .title{
+  font-size: 30rpx;
+}
+.details-head .head-message .content{
+  padding-top: 38rpx;
+  font-size: 20rpx;
+  padding-bottom: 38rpx;
+}
+.details-function{
+  border-bottom: 20rpx solid #ededed;
+}
+.details-function .function-list{
+  width: 710rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #f0f0f0;
+  padding-bottom: 52rpx;
+}
+.details-function .function-list:last-child{
+  border: none;
+}
+.details-function .function-list .function{
+  font-size: 28rpx;
+  padding-top: 20rpx;
+  line-height: 92rpx;
+}
+.details-function .function-list .text{
+  font-size: 20rpx;
+  line-height: 1.6em;
+}
+.partner{
+  padding-top: 28rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.partner .title-bar{
+  font-size: 30rpx;
+  line-height: 68rpx;
+}
+.partner .link-list{
+  padding-left: 256rpx;
+  position: relative;
+  border-bottom: 1rpx solid #ebebeb;
+}
+.partner .link-list:last-child{
+  border: none;
+}
+.partner .link-list .title{
+  padding-top: 17rpx;
+  line-height: 82rpx;
+  font-size: 24rpx;
+}
+.partner .link-list .content{
+  font-size: 20rpx;
+  line-height: 1.5em;
+  padding-bottom: 60rpx;
+}
+.partner .link-list .logo{
+  position: absolute;
+  left: 0;
+  top: 40rpx;
+  width: 199rpx;
+  height: 90rpx;
+}

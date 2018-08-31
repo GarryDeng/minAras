@@ -1,0 +1,60 @@
+{
+  "pages":[
+    "pages/built/list/built-list",
+    "pages/scheme/caseDetails/case-details",
+    "pages/scheme/case/case",
+    "pages/scheme/list/list",
+    "pages/scheme/scheme/scheme",
+    "pages/tank/list/list",
+    "pages/tank/thinkTank/think-tank",
+    "pages/indexs/index/index",
+    "pages/me/feedback/feedback",
+    "pages/tank/details/details",
+    "pages/built/details/details",
+    
+    
+    
+    "pages/me/history/history",
+    "pages/me/bindPhone/bind-phone",
+    
+    "pages/me/login/login"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#b8b8b8",
+    "selectedColor": "#333",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "iconPath": "utils/images/phone-index-nav.png",
+        "selectedIconPath": "utils/images/active-index-nav.png",
+        "pagePath": "pages/indexs/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "utils/images/phone-tank.png",
+        "selectedIconPath": "utils/images/active-phone-tank.png",
+        "pagePath": "pages/tank/thinkTank/think-tank",
+        "text": "智库"
+      },
+      {
+        "iconPath": "utils/images/phone-scheme.png",
+        "selectedIconPath": "utils/images/active-phone-scheme.png",
+        "pagePath": "pages/scheme/scheme/scheme",
+        "text": "方案"
+      },
+      {
+        "iconPath": "utils/images/phone-me.png",
+        "selectedIconPath": "utils/images/active-phone-me.png",
+        "pagePath": "pages/me/bindPhone/bind-phone",
+        "text": "我的"
+      }
+    ]
+  }
+}

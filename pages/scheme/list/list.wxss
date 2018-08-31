@@ -1,0 +1,53 @@
+@import "../../common/nav.wxss";
+.scheme-banner{
+  height: 364rpx;
+  position: relative;
+  width: 750rpx;
+}
+.scheme-banner image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  height: 364rpx;
+  z-index: -1;
+  display: block;
+}
+.scheme-banner .text{
+  line-height: 60rpx;
+  padding-top: 158rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #FFF;
+}
+.case-list{
+  background-color: #ebebeb;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  /* width: 710rpx; */
+  /* margin: 0 auto; */
+  padding: 20rpx;
+}
+.case-list .case{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 18rpx;
+  background-color: #FFF;
+  margin-bottom: 18rpx;
+}
+.case-list .case .icon{
+  width: 60rpx;
+  display: block;
+  height: 60rpx;
+  margin: 40rpx auto 0 auto;
+}
+.case-list .case .window{
+  font-size: 22rpx;
+  text-align: center;
+  padding-top: 26rpx;
+  line-height: 56rpx;
+}

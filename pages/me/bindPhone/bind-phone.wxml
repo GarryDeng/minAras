@@ -1,0 +1,31 @@
+<view class='user-head'>
+  <image class='default-user' src='../../../utils/images/default-user.png'></image>
+  <view class='user-name'>小小助理 <image src='../../../utils/images/edit.png'></image></view>
+  <image class='user-bg' src='../../../utils/images/user-bg.png'></image>
+</view>
+<view class='user-list'>
+  <navigator url=''>提交记录</navigator>
+  <navigator class='active' url=''>绑定手机</navigator>
+</view>
+<view class='phone-message'>
+  <view class='old-phone'>
+    <input value='' />
+    <view class='text'>原绑定号码</view>
+  </view>
+  <view class='new-phone'>
+    <input placeholder='请输入新绑定手机号码' placeholder-style='color:#d2d2d2' value='' />
+    <view class='icon'>
+      <image src='../../../utils/images/phone-number.png'></image>
+    </view>
+  </view>
+  <view class='send-code'>
+    <input maxlength='8' placeholder='请输入短信验证码' placeholder-style='color:#d2d2d2' value='' />
+    <view class='get-code'>获取验证码</view>
+  </view>
+</view>
+<navigator class='post-bind-phone' url=''>
+  <image src='../../../utils/images/button-click.png'></image>
+  绑 定
+</navigator>
+<import src="../../common/nav" />
+<template is="nav" data='{{...navItem}}'></template>

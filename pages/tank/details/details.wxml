@@ -1,0 +1,106 @@
+<view class='user-message'>
+  <view class='banner'>
+    <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+  </view>
+  <view class='name'>毛建明</view>
+  <view class='address'>
+    <image src='../../../utils/images/address.png'></image>
+    广东省 · 深圳市
+  </view>
+  <view class='position'>中国工程院院士 / 深圳市建筑设计研究总院有限公司董事长</view>
+</view>
+
+<view class='details-city-list'>
+  <view class='details-label'>
+    <view class='fl label'>擅长领域</view>
+  </view>
+  <view class='label-list'>
+    <view>智慧城市</view>
+    <view>智慧城市</view>
+    <view>智慧城市</view>
+    <view>智慧城市</view>
+    <view>城市</view>
+    <view>智慧城市</view>
+    <view>智慧城市</view>
+    <view>智慧城市</view>
+    <view>智慧城市</view>
+  </view>
+</view>
+
+<view>
+  <view class='details-label'>
+    <view class='fl label'>专家观点</view>
+    <navigator url='' class='fr more'>更多观点> </navigator>
+  </view>
+  <!--轮播图start  -->
+  <swiper class='swiper-content' circular="{{circular}}" autoplay="{{autoplay}}"  bindchange="swiperChange" current="{{currentLength}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='dots'>
+    <block wx:for="{{imgUrls}}">
+      <view class='dot {{index == currentLength ? "active" : ""}}'></view>
+    </block>
+  </view>
+  <!--轮播图end  -->
+</view>
+
+<view class='details-city-list'>
+  <view class='details-label'>
+    <view class='fl label'>专家介绍</view>
+  </view>
+  <view class='introduce line'>
+    保护设备，保护网络，知道物联网中有什么设备。 请记住，虽然设备本身可能不包含敏感信息，但它们可能会让你的网络门户大开，设备越陈旧，它们构成的安全风险就越大。
+  </view>
+</view>
+
+<view class='details-city-list'>
+  <view class='details-label'>
+    <view class='fl label'>工作简历</view>
+  </view>
+  <view class='line bottom-forty'>
+    <view class='punctuation-list'>
+      <view class='time'>1993.07 - 2000.12 </view>
+      <view class='content'>在大型A、H股上市公司-中石油吉林化学工业股份公司工作；历任技术员、人力资源主管、团支部书记及工会主席等职。</view>
+    </view>
+    <view class='punctuation-list'>
+      <view class='time'>1993.07 - 2000.12 </view>
+      <view class='content'>在大型A、H股上市公司-中石油吉林化学工业股份公司工作；历任技术员、人力资源主管、团支部书记及工会主席等职。</view>
+    </view>
+  </view>
+</view>
+
+<view class='swiper-list details-city-list'>
+  <view class='details-label'>
+    <view class='fl label'>成就荣誉</view>
+  </view>
+  <view class='list-content line'>
+    <view class='slide'>在大型A、H股上市公司-中石油吉林化学工业在大型A、H股上市公司-中石油吉林化学工业股份公司工作股份公司工作</view>
+    <view class='slide'>在大型A、H股上市公司-中石油吉林化学工业股份公司工作</view>
+  </view>
+</view>
+
+<view class='swiper-list details-city-list'>
+  <view class='details-label'>
+    <view class='fl label'>项目经历</view>
+  </view>
+  <view class='list-content line'>
+    <view class='slide'>在大型A、H股上市公司-中石油吉林化学工业股份公司工作</view>
+    <view class='slide'>在大型A、H股上市公司-中石油吉林化学工业股份公司工作</view>
+  </view>
+</view>
+
+<view class='swiper-list'>
+  <view class='details-label'>
+    <view class='fl label'>其他</view>
+  </view>
+  <view class='list-content'>
+    <view class='slide'>在大型A、H股上市公司-中石油吉林化学工业股份公司工作</view>
+    <view class='slide'>在大型A、H股上市公司-中石油吉林化学工业股份公司工作</view>
+  </view>
+</view>
+<import src="../../common/nav" />
+<template is="footerText" ></template>

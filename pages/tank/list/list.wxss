@@ -1,0 +1,182 @@
+@import "../../common/nav.wxss";
+.tank-head{
+  background-color: #FFF;
+  padding-top: 40rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 160rpx;
+  z-index: 9;
+}
+.list-search{
+  width: 710rpx;
+  margin: 0 auto;
+  height: 66rpx;
+  position: relative;
+}
+.list-search input{
+  border-radius: 6rpx;
+  color: #dcdcdc;
+  border: 1rpx solid #dcdcdc;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  padding: 15rpx;
+  line-height: 36rpx;
+  height: 66rpx;
+}
+.list-search image{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  right: 18rpx;
+  top: 8rpx;
+  opacity: .6;
+}
+.tank-head .nav-list{
+  padding-top: 14rpx;
+  height: 80rpx;
+}
+.tank-head .nav-list .class-name{
+  width: 50%;
+  float: left;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.tank-head .nav-list .class-name image{
+  width: 18rpx;
+  height: 10rpx;
+  margin-left: 8rpx;
+  vertical-align: middle;
+}
+.list-content{
+  background-color: #f0f0f0;
+  padding-top: 200rpx;
+}
+.team-list{
+  width: 710rpx;
+  height: 320rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12rpx;
+  box-shadow: 0 15rpx 15rpx #ccc;
+  margin: 20rpx auto 0 auto;
+  background-color: #FFF;
+}
+.team-list .content-tatol{
+  padding-left: 262rpx;
+  position: relative;
+}
+.team-list .content-tatol .img{
+  position: absolute;
+  width: 180rpx;
+  height: 180rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  top: 60rpx;
+  left: 30rpx;
+  box-shadow: 0 15rpx 15rpx #ccc;
+}
+.team-list .content-tatol .img image{
+  width: 100%;
+  height: 100%;
+}
+.team-list .content-tatol .label{
+  width: 113rpx;
+  height: 45rpx;
+  position: absolute;
+  top: 0;
+  right: 45rpx;
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 16rpx;
+  color: #FFF;
+}
+.team-list .content-tatol .label image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.team-list .user-message{
+  padding-top: 56rpx;
+}
+.team-list .user-message .name{
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+.team-list .user-message .title{
+  padding-top: 18rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
+}
+.team-list .user-message .position{
+  font-size: 22rpx;
+  line-height: 30rpx;
+  height: 60rpx;
+  position: relative;
+  overflow: hidden;
+}
+.team-list .title-label{
+  font-size: 0;
+}
+.team-list .title-label .icon{
+  display: inline-block;
+  font-size: 18rpx;
+  line-height: 30rpx;
+  padding: 0 18rpx;
+  border: 1rpx solid #e2f4f9;
+  border-radius: 6rpx;
+  color: #666;
+  margin-left: 12rpx;
+}
+.team-list .title-label .icon:first-child{
+  margin-left: 0;
+}
+.team-list .get-more{
+  margin-top: 22rpx;
+  font-size: 16rpx;
+  float: right;
+  color: #666;
+  margin-right: 40rpx;
+}
+.list-class,.list-class-sid{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFF;
+}
+.list-class picker-view,.list-class-sid picker-view{
+  height: 300rpx;
+}
+/* .list-class-sid picker-view{
+  display: flex;
+  justify-content: center;
+} */
+.list-class picker-view view,.list-class-sid picker-view view{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+/* .list-class-sid picker-view picker-view-column{
+  float: left;
+  width: 50%;
+} */
+.list-class .close,.list-class-sid .close{
+  float: left;
+  font-size: 38rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  color: #CCC;
+}
+.list-class .affirm,.list-class-sid .affirm{
+  float: right;
+  font-size: 38rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}

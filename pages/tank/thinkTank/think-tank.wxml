@@ -1,0 +1,92 @@
+
+<!--轮播图start  -->
+<swiper class='swiper-content' circular="{{circular}}" autoplay="{{autoplay}}"  bindchange="swiperChange" current="{{currentLength}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <image src="{{item.image}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='dots'>
+  <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+    <view class='dot {{index == currentLength ? "active" : ""}}'></view>
+  </block>
+</view>
+<!--轮播图end  -->
+
+<view class='tank-title'>ARAS<text>智库</text></view>
+
+<view class='service-introduction'>
+  <view class='tank-service' wx:for="{{description}}" wx:key="{{item.enname}}">
+    <image class='icon' src='{{item.image2}}' />
+    <view class='title'>{{item.name}}</view>
+    <view class='content'>{{item.description}}</view>
+  </view>
+  <navigator class='service-consult' url=''>
+    <image src='../../../utils/images/button-click.png'></image>
+    业务咨询
+  </navigator>
+</view>
+<view class='tank-title'>ARAS <text>专家团队</text></view>
+<view class='team-content-bottom'>
+  <!--轮播图start  -->
+  <swiper class='swiper-team' circular="{{teamCircular}}" autoplay="{{teamPlay}}"  bindChange="teamChange" current="{{teamCurrentLength}}" interval="{{teamInterval}}" duration="{{teamDuration}}">
+    <block wx:for="{{teamImgUrls}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <view>
+          <view class='content-tatol'>
+            <view class='img'>
+              <image src="{{item.top_img}}" class="slide-image"/>
+            </view>
+            <view class='label'>
+              <image src='../../../utils/images/color-label.png'></image>
+              {{item.cate_name}}
+            </view>
+            <view class='user-message'>
+              <view class='name'>{{item.name}}</view>
+              <view class='title'>{{item.job[0]?item.job[0]:''}}</view>
+              <view class='position'>{{item.job[1]?item.job[1]:''}}</view>
+            </view>
+            <view class='title-label'>
+              <view class='icon' wx:for="{{item.scfx}}" wx:key="{{item}}">{{item}}</view>
+            </view>
+          </view>
+          <navigator class='get-more' url=''>更多></navigator>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='dots'>
+    <block wx:for="{{teamImgUrls}}" wx:key="{{item.id}}">
+      <view class='dot {{index == teamCurrentLength ? "active" : ""}}'></view>
+    </block>
+  </view>
+  <!--轮播图end  -->
+  <navigator class='service-consult' url='../list/list'>
+    <image src='../../../utils/images/button-click.png'></image>
+    找专家
+  </navigator>
+</view>
+<view class='tank-title'>ARAS <text>专家观点</text></view>
+<view>
+  <!--轮播图start  -->
+  <swiper class='swiper-content' circular="{{viewpointCircular}}" autoplay="{{viewpointPlay}}"  bindchange="viewpointChange" current="{{viewpointCurrentLength}}" interval="{{viewpointInterval}}" duration="{{viewpointDuration}}">
+    <block wx:for="{{viewpointImgUrls}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <image src="{{item.thumb}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='dots'>
+    <block wx:for="{{viewpointImgUrls}}" wx:key="{{item.id}}">
+      <view class='dot {{index ==  viewpointCurrentLength ? "active" : ""}}'></view>
+    </block>
+  </view>
+  <!--轮播图end  -->
+  <navigator class='service-consult' url=''>
+    <image src='../../../utils/images/button-click.png'></image>
+    更多观点
+  </navigator>
+</view>
+<import src="../../common/nav" />
+<template is="footerText" ></template>

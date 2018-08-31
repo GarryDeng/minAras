@@ -1,0 +1,43 @@
+@import "../../common/nav.wxss";
+.case-list{
+  border-top: 20rpx solid #ededed;
+  padding: 48rpx 20rpx;
+}
+.case-list .img{
+  width: 100%;
+}
+.case-list:first-child{
+  border-top: none;
+}
+.case-list .function{
+  padding-top: 10rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+}
+.case-list .text{
+  font-size: 20rpx;
+  line-height: 1.6em;
+}
+.constitute{
+  display: block;
+  width: 92rpx;
+  height: 92rpx;
+  position: fixed;
+  bottom: 264rpx;
+  right: 20rpx;
+  color: #FFF;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 1.3em;
+}
+.constitute .text{
+  margin-top: 15rpx;
+}
+.constitute image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 92rpx;
+  height: 92rpx;
+  z-index: -1;
+}

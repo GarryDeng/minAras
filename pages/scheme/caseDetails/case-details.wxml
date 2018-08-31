@@ -1,0 +1,44 @@
+<view class='details-head'>
+  <view class='head-message'>
+    <view class='title'>梯控系统</view>
+    <view class='content'>ARAS智库汇集了智慧城市建设领域最权威的两院院士与行业技术专家。积极推动城市建设与管理方式的变革，帮助城市进行科学规          划、公共服务、城市治理、应急指挥以及产业协同，不断提升城市运行效率和公共服务水平，为城市装上“智慧的大脑”，更高效、更优质地进行城市综合管          理和运营。
+    </view>
+  </view>
+  <view class='box'>
+    <image class='icon' src='../../../utils/images/icon.png'></image>
+    <view class='title'>梯控系统</view>
+  </view>
+</view>
+
+<view class='details-function'>
+  <view class='function-list'>
+    <view class='function'>功能点 · 一</view>
+    <view class='text'>RAS智库汇集了智慧城市建设领域最权威的两院院士与行业技术专家。旨在以技术创新为驱动力，积极推动城市建设与管理方式的变革，帮助城市进行科学规划、公共服务、城市治理、应急指挥以及产业协同。</view>
+  </view>
+  <view class='function-list'>
+    <view class='function'>功能点 · 一</view>
+    <view class='text'>RAS智库汇集了智慧城市建设领域最权威的两院院士与行业技术专家。旨在以技术创新为驱动力，积极推动城市建设与管理方式的变革，帮助城市进行科学规划、公共服务、城市治理、应急指挥以及产业协同。</view>
+  </view>
+</view>
+
+<view class='partner'>
+  <view class='title-bar'>服务支持企业</view>
+  <view class='link-list'>
+    <view class='title'>LG集团</view>
+    <view class='content'>韩国LG集团于1947年成立于韩国首尔，位于首尔市永登浦区汝矣岛洞20号。是领导世界产业发展的国际性企业集团。</view>
+    <image class='logo' src='../../../utils/images/logo.png'></image>
+  </view>
+  <view class='link-list'>
+    <view class='title'>LG集团</view>
+    <view class='content'>韩国LG集团于1947年成立于韩国首尔，位于首尔市永登浦区汝矣岛洞20号。是领导世界产业发展的国际性企业集团。</view>
+    <image class='logo' src='../../../utils/images/logo.png'></image>
+  </view>
+  <view class='link-list'>
+    <view class='title'>LG集团</view>
+    <view class='content'>韩国LG集团于1947年成立于韩国首尔，位于首尔市永登浦区汝矣岛洞20号。是领导世界产业发展的国际性企业集团。</view>
+    <image class='logo' src='../../../utils/images/logo.png'></image>
+  </view>
+</view>
+
+<import src="../../common/nav" />
+<template is="footerText"></template>

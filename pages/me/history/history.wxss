@@ -1,0 +1,107 @@
+@import "../../common/nav.wxss";
+.user-head{
+  height: 320rpx;
+  width: 100%;
+  position: relative;
+}
+.user-head .user-bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  z-index: -1;
+}
+.user-head .default-user{
+  display: block;
+  width: 141rpx;
+  height: 141rpx;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 44rpx auto 0 auto;
+}
+.user-head .user-name{
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 92rpx;
+}
+.user-head .user-name image{
+  display: inline-block;
+  width: 26rpx;
+  height: 26rpx;
+}
+.user-list{
+  padding-top: 28rpx;
+  line-height: 88rpx;
+  height: 88rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.user-list navigator{
+  float: left;
+  position: relative;
+  width: 50%;
+  text-align: center;
+  font-size: 28rpx;
+}
+.user-list navigator.active::after{
+  content: "";
+  display: block;
+  width: 110rpx;
+  height: 6rpx;
+  left: 50%;
+  margin-left: -55rpx;
+  position: absolute;
+  bottom: -3rpx;
+  background-color: #12becb;
+}
+.not-history{
+  padding-top: 250rpx;
+}
+.not-history image{
+  width: 344rpx;
+  display: block;
+  height: 181rpx;
+  margin: 0 auto;
+}
+.not-history .text{
+  color: #666;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+.history-list-content .list{
+  width: 710rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.history-list-content .list .head-title{
+  padding-top: 14rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+}
+.history-list-content .list .head-title .fl{
+  font-size: 30rpx;
+}
+.history-list-content .list .head-title .fr{
+  color: #12becb;
+  font-size: 22rpx;
+}
+.history-list-content .list .head-title .fr.state-end{
+  color: #999;
+}
+.history-list-content .list .list-content{
+  font-size: 20rpx;
+  line-height: 1.6em;
+}
+.history-list-content .list .user-message{
+  height: 72rpx;
+  line-height: 72rpx;
+  padding-bottom: 20rpx;
+  font-size: 18rpx;
+  opacity: .4;
+}
+.history-list-content .list .user-message .name{
+  padding-right: 22rpx;
+}

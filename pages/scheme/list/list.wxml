@@ -1,0 +1,51 @@
+<view class='scheme-banner'>
+  <image src='../../../utils/images/scheme-banner.png'></image>
+  <view class='text'>解决方案的名称</view>
+</view>
+
+<view class='case-list'>
+  <view class='case'>
+    <image class='icon' src='../../../utils/images/icon.png'></image>
+    <view class='window'>
+    物业管理系统
+    </view>
+  </view>
+
+  <view class='case'>
+    <image class='icon' src='../../../utils/images/icon.png'></image>
+    <view class='window'>
+    物业管理系统物业管
+    </view>
+  </view>
+
+  <view class='case'>
+    <image class='icon' src='../../../utils/images/icon.png'></image>
+    <view class='window'>
+    物业管理系统
+    </view>
+  </view>
+
+  <view class='case'>
+    <image class='icon' src='../../../utils/images/icon.png'></image>
+    <view class='window'>
+    物业管理系统
+    </view>
+  </view>
+
+  <view class='case'>
+    <image class='icon' src='../../../utils/images/icon.png'></image>
+    <view class='window'>
+    物业管理系统
+    </view>
+  </view>
+
+  <view class='case'>
+    <image class='icon' src='../../../utils/images/icon.png'></image>
+    <view class='window'>
+    物业管理系统
+    </view>
+  </view>
+</view>
+
+<import src="../../common/nav" />
+<template is="footerText"></template>

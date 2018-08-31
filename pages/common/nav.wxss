@@ -1,0 +1,60 @@
+@import 'common.wxss';
+.nav-ul{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  background-color: #FFF;
+  height: 100rpx;
+  /* padding-bottom: 55rpx; */
+}
+.nav-height{
+  position: relative;
+  height: 100rpx;
+}
+.nav-li{
+  float: left;
+  display: block;
+  width: 25%;
+  text-align: center;
+  opacity: 1;
+}
+.nav-li .text{
+  font-size: 20rpx;
+  line-height: 48rpx;
+  opacity: .4;
+}
+.nav-li image{
+  opacity: .4;
+}
+.index-page image{
+  width: 39rpx;
+  height: 32rpx;
+  margin-top: 10rpx;
+}
+.tank-page image{
+  width: 45rpx;
+  height: 36rpx;
+  margin-top: 8rpx;
+}
+.scheme-page image{
+  width: 34rpx;
+  height: 27rpx;
+  margin-top: 14rpx;
+}
+.me-page image{
+  width: 34rpx;
+  height: 35rpx;
+  margin-top: 8rpx;
+}
+.nav-li.active .text,.nav-li.active image{
+  opacity: 1;
+}
+.make-footer{
+  font-size: 14rpx;
+  line-height: 76rpx;
+  text-align: center;
+  background-color: #ededed;
+  color: rgba(0, 0, 0, .6);
+}

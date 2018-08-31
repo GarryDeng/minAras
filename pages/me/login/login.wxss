@@ -1,0 +1,26 @@
+@import "../../common/nav.wxss";
+.login-bg{
+  display: block;
+  width: 693rpx;
+  height: 360rpx;
+  margin: 290rpx auto 0 auto;
+}
+.click-login{
+  position: relative;
+  width: 630rpx;
+  height: 67rpx;
+  margin: 275rpx auto 0 auto;
+  color: #FFF;
+  text-align: center;
+  line-height: 67rpx;
+  font-size: 28rpx;
+}
+.click-login image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 630rpx;
+  height: 67rpx;
+  display: block;
+  z-index: -1;
+}

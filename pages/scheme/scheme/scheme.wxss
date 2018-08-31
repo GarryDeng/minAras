@@ -1,0 +1,51 @@
+@import "../../common/nav.wxss";
+.swiper-content{
+  width: 692rpx;
+  height: 1162rpx;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 15rpx 15rpx #ccc;
+  overflow: hidden;
+  border-radius: 12rpx;
+}
+.swiper-content image{
+  width: 100%;
+  height: 1000rpx;
+  /* display: block;
+  height: 400rpx;
+  position: relative; */
+}
+.dots{
+  position: relative;
+  padding-top: 26rpx;
+  padding-bottom: 28rpx;
+  width: 750rpx;
+  /* display: flex; */
+  font-size: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.dots .dot{
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 16rpx;
+  display: inline-block;
+}
+.dots .dot.active{
+  background-color: #070707;
+}
+.click-details{
+  height: 162rpx;
+}
+.click-details navigator{
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  font-size: 28rpx;
+  width: 250rpx;
+  border: 1px solid #33afd8;
+  margin: 40rpx auto 0 auto;
+}

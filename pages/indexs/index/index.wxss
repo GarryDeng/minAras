@@ -1,0 +1,237 @@
+@import "../../common/nav.wxss";
+.swiper-content{
+  width: 710rpx;
+  height: 400rpx;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 15rpx 15rpx #ccc;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.swiper-content image{
+  width: 710rpx;
+  display: block;
+  height: 400rpx;
+  position: relative;
+}
+.dots{
+  position: relative;
+  padding-top: 26rpx;
+  padding-bottom: 28rpx;
+  width: 750rpx;
+  /* display: flex; */
+  font-size: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.dots .dot{
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 16rpx;
+  display: inline-block;
+}
+.dots .dot.active{
+  background-color: #070707;
+}
+.specialist-head{
+  width: 710rpx;
+  height: 113rpx;
+  line-height: 113rpx;
+  margin: 0 auto;
+}
+.specialist-head .fl{
+  font-size: 36rpx;
+}
+.specialist-head .fr{
+  font-size: 22rpx;
+  color: #000;
+  opacity: .5;
+}
+.swiper-specialist{
+  padding-top: 18rpx;
+  height: 288rpx;
+  width: 710rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.swiper-specialist .img{
+  width: 180rpx;
+  height: 180rpx;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 15rpx 15rpx #ccc;
+}
+.swiper-specialist .img image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.swiper-specialist .name{
+  font-size: 24rpx;
+  line-height: 1em;
+  padding-top: 36rpx;
+  text-align: center;
+  padding-bottom: 16rpx;
+}
+.swiper-specialist .label{
+  font-size: 16rpx;
+  text-align: center;
+  line-height: 1em;
+}
+.line-to{
+  border-bottom: 16rpx solid #ededed;
+}
+.swiper-product{
+  width: 730rpx;
+  margin-left: 20rpx;
+  position: relative;
+  height: 420rpx;
+}
+.swiper-product .list{
+  height: 363rpx;
+  width: 280rpx;
+  position: relative;
+  border-radius: 12rpx;
+  overflow: hidden;
+  box-shadow: 0 15rpx 15rpx #ccc;
+}
+.swiper-product .list .img{
+  width: 100%;
+  height: 234rpx;
+}
+.swiper-product .list .img image{
+  height: 100%;
+  width: 100%;
+}
+.swiper-product .list .china{
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 1em;
+  padding-top: 36rpx;
+}
+.swiper-product .list .english{
+  padding-top: 14rpx;
+  line-height: 1em;
+  font-size: 16rpx;
+  text-align: center;
+}
+.remit-list{
+  width: 710rpx;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  /* height: 420rpx; */
+  border-radius: 12rpx;
+  box-shadow: 0 15rpx 15rpx #ccc;
+}
+.remit-list .image{
+  height: 314rpx;
+}
+.remit-list .image image{
+  width: 100%;
+  height: 100%;
+}
+.remit-list .text{
+  line-height: 1.2em;
+  font-size: 28rpx;
+  padding: 18rpx 30rpx 12rpx 30rpx;
+}
+.remit-list .time-read{
+  font-size: 20rpx;
+  height: 20rpx;
+  opacity: .4;
+  padding-bottom: 15rpx;
+}
+.remit-list .time-read .time{
+  padding-left: 26rpx;
+  padding-right: 13rpx;
+}
+.remit-list .time-read .look image{
+  width: 22rpx;
+  height: 14rpx;
+}
+.case-list{
+  width: 710rpx;
+  margin: 15rpx auto 0 auto;
+  height: 230rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 15rpx 15rpx #ccc;
+  overflow: hidden;
+  position: relative;
+}
+.case-list .case-img{
+  width: 344rpx;
+  height: 230rpx;
+}
+.case-list .case-img image{
+  width: 100%;
+  height: 100%;
+}
+.case-list .case-text{
+  width: 300rpx;
+  padding-left: 30rpx;
+}
+.case-list .case-text .text{
+  font-size: 28rpx;
+  line-height: 1.4em;
+  padding-top: 20rpx;
+  height: 157rpx;
+}
+.case-list .case-text .time-look{
+  height: 56rpx;
+  line-height: 1em;
+  padding-top: 13rpx;
+  font-size: 20rpx;
+  opacity: .6;
+}
+.case-list .case-text .time-look .look{
+  padding-right: 20rpx;
+}
+.case-list .case-text .time-look .look image{
+  width: 22rpx;
+  height: 14rpx;
+}
+.line-to-bottom{
+  border-bottom: 16rpx solid #ededed;
+  padding-bottom: 46rpx;
+  border-top: 16rpx solid #ededed;
+}
+.platform{
+  padding-top: 36rpx;
+  padding-bottom: 50rpx;
+  position: relative;
+}
+.platform .city{
+  line-height: 60rpx;
+  padding-left: 54rpx;
+  font-size: 28rpx;
+}
+.platform .supplier{
+  font-size: 22rpx;
+  padding-left: 54rpx;
+  color: rgba(0, 0, 0, .6);
+}
+.platform .new{
+  position: absolute;
+  right: 66rpx;
+  top: 60rpx;
+  width: 180rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  text-align: center;
+  display: block;
+  color: #FFF;
+  font-size: 24rpx;
+}
+.platform .new image{
+  position: absolute;
+  width: 180rpx;
+  height: 51rpx;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}

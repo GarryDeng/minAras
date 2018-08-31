@@ -1,0 +1,145 @@
+@import "../../common/nav.wxss";
+.user-head{
+  height: 320rpx;
+  width: 100%;
+  position: relative;
+}
+.user-head .user-bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  z-index: -1;
+}
+.user-head .default-user{
+  display: block;
+  width: 141rpx;
+  height: 141rpx;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 44rpx auto 0 auto;
+}
+.user-head .user-name{
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 92rpx;
+}
+.user-head .user-name image{
+  display: inline-block;
+  width: 26rpx;
+  height: 26rpx;
+}
+.user-list{
+  padding-top: 28rpx;
+  line-height: 88rpx;
+  height: 88rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.user-list navigator{
+  float: left;
+  position: relative;
+  width: 50%;
+  text-align: center;
+  font-size: 28rpx;
+}
+.user-list navigator.active::after{
+  content: "";
+  display: block;
+  width: 110rpx;
+  height: 6rpx;
+  left: 50%;
+  margin-left: -55rpx;
+  position: absolute;
+  bottom: -3rpx;
+  background-color: #12becb;
+}
+.phone-message{
+  padding-top: 118rpx;
+}
+.phone-message input{
+  line-height: 40rpx;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  height: 70rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #d2d2d2;
+  width: 100%;
+  box-sizing: border-box;
+}
+.phone-message .old-phone,.phone-message .new-phone,.phone-message .send-code{
+  width: 528rpx;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 44rpx;
+}
+.phone-message .old-phone input{
+  padding-left: 160rpx;
+}
+.phone-message .old-phone .text{
+  position: absolute;
+  left: 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  top: 0;
+  font-size: 22rpx;
+  color: #d2d2d2;
+  width:160rpx;
+  text-align: center;
+}
+.phone-message .new-phone input{
+  padding-left: 106rpx;
+  font-size: 22rpx;
+}
+.phone-message .new-phone .icon{
+  position: absolute;
+  left: 0;
+  width: 82rpx;
+  height: 44rpx;
+  top: 14rpx;
+  border-right: 1rpx solid #d2d2d2;
+}
+.phone-message .new-phone .icon image{
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 19rpx;
+  opacity: .6;
+}
+.phone-message .send-code input{
+  font-size: 22rpx;
+  padding-left: 26rpx;
+}
+.phone-message .send-code .get-code{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #000;
+  width: 144rpx;
+  border-top-right-radius: 6rpx;
+  border-bottom-right-radius: 6rpx;
+  background-color: #CCC;
+  font-size: 20rpx;
+}
+.post-bind-phone{
+  margin: 30rpx auto 0 auto;
+  width: 538rpx;
+  height: 67rpx;
+  line-height: 67rpx;
+  color: #FFF;
+  text-align: center;
+  font-size: 28rpx;
+  position: relative;
+}
+.post-bind-phone image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 538rpx;
+  height: 67rpx;
+  z-index: -1;
+}

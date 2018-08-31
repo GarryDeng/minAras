@@ -1,0 +1,10 @@
+<view class='surface'>
+  <image class='login-bg' src='../../../utils/images/login-bg.png'></image>
+  <navigator url='' class='click-login'>
+    <image src='../../../utils/images/button-click.png'></image>
+    点击登录
+  </navigator>
+</view>
+
+<import src="../../common/nav" />
+<template is="nav" data='{{...navItem}}'></template>

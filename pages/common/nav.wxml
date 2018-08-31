@@ -1,0 +1,25 @@
+<template name="nav">
+  <view class='nav-height'>
+    <view class="nav-ul clear">
+        <navigator class="nav-li index-page {{url=='index'?'active':''}}" url='../../indexs/index/index' redirect="true">
+            <image src="../../../utils/images/phone-index-nav.png" />
+            <view class="text">首页</view>
+        </navigator>
+        <navigator class="nav-li tank-page {{url=='tank'?'active':''}}" url='../../tank/thinkTank/think-tank' redirect="true">
+            <image src="../../../utils/images/phone-tank.png" />
+            <view class="text">智库</view>
+        </navigator>
+        <navigator class="nav-li scheme-page {{url=='scheme'?'active':''}}" url='../../scheme/scheme/scheme' redirect="true">
+            <image src="../../../utils/images/phone-scheme.png" />
+            <view class="text">方案</view>
+        </navigator>
+        <navigator class="nav-li me-page {{url=='user'?'active':''}}" url='../../me/bindPhone/bind-phone' redirect="true">
+            <image src="../../../utils/images/phone-me.png" />
+            <view class="text">我的</view>
+        </navigator>
+    </view>
+  </view>
+</template>
+<template name="footerText">
+    <view class="make-footer">MAKE CITY BEYOND SMART</view>
+</template>
