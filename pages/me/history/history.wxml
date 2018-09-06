@@ -8,59 +8,7 @@
   <navigator url=''>绑定手机</navigator>
 </view>
 
-<view class='history-list-content'>
-  <view class='list'>
-    <view class='head-title'>
-      <view class='fl'>意见反馈</view>
-      <view class='fr state-ing'>处理中</view>
-    </view>
-    <view class='list-content'>
-      保护设备，保护网络，知道物联网中有什么设备。 请记住，虽然设备本身可能不包含敏感信息，但它们可能会让你的网络门户大开，设备越陈旧，它们构成的安全风险就越大。
-    </view>
-    <view class='user-message'>
-      <text class='fl name'>张先生</text>
-      <text class='fl call'>15913397362</text>
-      <text class='fr time'>2018/07/09</text>
-    </view>
-  </view>
 
-  <view class='list'>
-    <view class='head-title'>
-      <view class='fl'>意见反馈</view>
-      <view class='fr state-end'>已处理</view>
-    </view>
-    <view class='list-content'>
-      保护设备，保护网络，知道物联网中有什么设备。 请记住，虽然设备本身可能不包含敏感信息，但它们可能会让你的网络门户大开，设备越陈旧，它们构成的安全风险就越大。
-    </view>
-    <view class='user-message'>
-      <text class='fl name'>张先生</text>
-      <text class='fl call'>15913397362</text>
-      <text class='fr time'>2018/07/09</text>
-    </view>
-  </view>
-  <view class='list'>
-    <view class='head-title'>
-      <view class='fl'>意见反馈</view>
-      <view class='fr state-end'>已处理</view>
-    </view>
-    <view class='list-content'>
-      保护设备，保护网络，知道物联网中有什么设备。 请记住，虽然设备本身可能不包含敏感信息，但它们可能会让你的网络门户大开，设备越陈旧，它们构成的安全风险就越大。
-    </view>
-    <view class='user-message'>
-      <text class='fl name'>张先生</text>
-      <text class='fl call'>15913397362</text>
-      <text class='fr time'>2018/07/09</text>
-    </view>
-  </view>
-
-</view>
-
-
-<!-- 无记录 -->
-<!-- <view class='not-history'>
-  <image src='../../../utils/images/not-history.png'></image>
-  <view class='text'>暂无内容哦</view>
-</view> -->
 
 <import src="../../common/nav" />
 <template is="nav" data='{{...navItem}}'></template>

@@ -12,8 +12,11 @@
   background-color: #FFF;
   z-index: 3;
 }
-.swiper-content navigator{
+.swiper-content view{
   font-size: 28rpx;
+}
+.swiper-content view.active{
+  font-weight: bold;
 }
 .built-list{
   background-color: #ededed;

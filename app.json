@@ -1,23 +1,27 @@
 {
   "pages":[
-    "pages/built/list/built-list",
-    "pages/scheme/caseDetails/case-details",
-    "pages/scheme/case/case",
-    "pages/scheme/list/list",
     "pages/scheme/scheme/scheme",
-    "pages/tank/list/list",
-    "pages/tank/thinkTank/think-tank",
-    "pages/indexs/index/index",
-    "pages/me/feedback/feedback",
-    "pages/tank/details/details",
-    "pages/built/details/details",
-    
-    
-    
-    "pages/me/history/history",
     "pages/me/bindPhone/bind-phone",
     
-    "pages/me/login/login"
+    "pages/built/list/built-list",
+    "pages/indexs/index/index",
+    "pages/built/details/details",
+    
+    "pages/scheme/caseDetails/case-details",
+    
+    "pages/scheme/case/case",
+    "pages/scheme/list/list",
+    
+    "pages/tank/list/list",
+    "pages/tank/thinkTank/think-tank",
+    
+    "pages/me/feedback/feedback",
+    "pages/tank/details/details",
+    
+    
+    
+    
+    "pages/me/history/history"
   ],
   "window":{
     "backgroundTextStyle":"light",

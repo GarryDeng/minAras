@@ -1,31 +1,72 @@
-<view class='user-head'>
-  <image class='default-user' src='../../../utils/images/default-user.png'></image>
-  <view class='user-name'>小小助理 <image src='../../../utils/images/edit.png'></image></view>
-  <image class='user-bg' src='../../../utils/images/user-bg.png'></image>
+<!-- 登录start -->
+<view class='surface' wx:if="{{loginBoolean}}">
+  <image class='login-bg' src='../../../utils/images/login-bg.png'></image>
+  <button open-type="getUserInfo" class='click-login' bindgetuserinfo="bindGetUserInfo">
+    <image src='../../../utils/images/button-click.png'></image>
+    点击登录
+  </button>
 </view>
-<view class='user-list'>
-  <navigator url=''>提交记录</navigator>
-  <navigator class='active' url=''>绑定手机</navigator>
-</view>
-<view class='phone-message'>
-  <view class='old-phone'>
-    <input value='' />
-    <view class='text'>原绑定号码</view>
+<!-- 登录end -->
+<view wx:if="{{!loginBoolean}}">
+  <view class='user-head'>
+    <image class='default-user' src='{{userImg}}'></image>
+    <view class='user-name'>{{userName}}
+    <!-- <image src='../../../utils/images/edit.png'></image> -->
+    </view>
+    <image class='user-bg' src='../../../utils/images/user-bg.png'></image>
   </view>
-  <view class='new-phone'>
-    <input placeholder='请输入新绑定手机号码' placeholder-style='color:#d2d2d2' value='' />
-    <view class='icon'>
-      <image src='../../../utils/images/phone-number.png'></image>
+  <view class='user-list'>
+    <view bindtap='trueClick' class="{{activeClass ? 'active' : ''}}">提交记录</view>
+    <view bindtap='falseClick' class="{{!activeClass ? 'active' : ''}}">绑定手机</view>
+  </view>
+  <view wx:if="{{!activeClass}}" >
+    <view class='phone-message' >
+      <view class='old-phone' wx:if="{{!!phone}}">
+        <input bindblur='getOldPhone' value='' />
+        <view class='text'>原绑定号码</view>
+      </view>
+      <view class='new-phone'>
+        <input placeholder='{{phoneHint}}' type='number' bindblur='getPhoneVal' placeholder-style='color:#d2d2d2' value='' />
+        <view class='icon'>
+          <image src='../../../utils/images/phone-number.png'></image>
+        </view>
+      </view>
+      <view class='send-code'>
+        <input maxlength='8' type='number' placeholder='请输入短信验证码' placeholder-style='color:#d2d2d2' bindblur='getCodeVal' value='' />
+        <view class='get-code' bindtap="getCodeNumber" >{{codeHintMessage}}</view>
+      </view>
+    </view>
+    <view class='post-bind-phone' bindtap='bindPhoneMessage'>
+      <image src='../../../utils/images/button-click.png'></image>
+      绑 定
     </view>
   </view>
-  <view class='send-code'>
-    <input maxlength='8' placeholder='请输入短信验证码' placeholder-style='color:#d2d2d2' value='' />
-    <view class='get-code'>获取验证码</view>
+  
+  <view class='history-list-content' wx:if="{{activeClass}}" >
+    <view class='list' wx:for="{{postHistoryList}}" wx:key="{{item.id}}">
+      <view class='head-title'>
+        <view wx:if="{{item.type == 1}}" class='fl'>咨询合作</view>
+        <view wx:if="{{item.type == 2}}" class='fl'>入驻智库</view>
+        <view wx:if="{{item.type == 3}}" class='fl'>意见反馈</view>
+        <view wx:if="{{item.status == 0}}" class='fr state-ing'>未处理</view>
+        <view wx:if="{{item.status == 1}}" class='fr state-ing'>回访跟进</view>
+        <view wx:if="{{item.status == 2}}" class='fr state-end'>已完成</view>
+      </view>
+      <view class='list-content'>{{item.content}}</view>
+      <view class='user-message'>
+        <text class='fl name'>{{item.user_name}}</text>
+        <text class='fl call'>{{item.phone}}</text>
+        <text class='fr time'>{{item.addtime}}</text>
+      </view>
+    </view>
+  <!-- 无记录 -->
+  <view class='not-history' wx:if="{{!postHistoryList}}" >
+    <image src='../../../utils/images/not-history.png'></image>
+    <view class='text'>暂无内容哦</view>
   </view>
 </view>
-<navigator class='post-bind-phone' url=''>
-  <image src='../../../utils/images/button-click.png'></image>
-  绑 定
-</navigator>
-<import src="../../common/nav" />
-<template is="nav" data='{{...navItem}}'></template>
+
+
+
+
+</view>

@@ -1,5 +1,5 @@
 import { config } from "../../../utils/config";
-var app = getApp();
+const app = getApp();
 
 Page({
 
@@ -76,6 +76,23 @@ Page({
         });
       }
     });
+  },
+  getNavId: function (event) {
+    const that = this;
+    this.setData({
+      catId: event.target.dataset.ids,
+      page: 0,
+    });
+    that.getContent(config.apiList.builtList, function (data) {
+      that.setData({
+        builtContent: data.data
+      })
+    });
+  },
+  goToContent: function (event) {
+    wx.navigateTo({
+      url: '../details/details?id=' + event.target.dataset.ids
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

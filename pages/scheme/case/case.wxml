@@ -1,24 +1,21 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<!-- <block wx:for="{{replyTemArray}}" wx:key="">
+    回复{{index}}:<template is="wxParse" data="{{wxParseData:item}}"/>
+</block> -->
 <view>
-  <view class='case-list'>
-    <image class='img' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+  <view class='case-list' wx:for="{{replyTemArray}}" wx:key="{{index}}">
+    <!-- <image class='img' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image> -->
     <view class='function'>功能点 一</view>
-    <view class='text'>
+    <template is="wxParse" data="{{wxParseData:item}}"/>
+    <!-- <view class='text'>
       RAS智库汇集了智慧城市建设领域最权威的两院院士与行业技术专家。旨在以技术创新为驱动力，积极推动城市建设与管理方式的变革，帮助城市进行科学规        划、公共服务、城市治理、应急指挥以及产业协同。
-    </view>
-  </view>
-  <view class='case-list'>
-    <image class='img' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
-    <view class='function'>功能点 一</view>
-    <view class='text'>
-      RAS智库汇集了智慧城市建设领域最权威的两院院士与行业技术专家。旨在以技术创新为驱动力，积极推动城市建设与管理方式的变革，帮助城市进行科学规        划、公共服务、城市治理、应急指挥以及产业协同。
-    </view>
+    </view> -->
   </view>
 </view>
-<navigator class='constitute' url=''>
+<view class='constitute' data-caseId = "{{caseId}}" >
   <image src='../../../utils/images/radius-change.png'></image>
   <!-- <view class='text'>系统</view>
   <view>构成</view> -->
-</navigator>
-
+</view>
 <import src="../../common/nav" />
 <template is="footerText"></template>

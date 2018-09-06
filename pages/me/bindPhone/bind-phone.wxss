@@ -38,14 +38,14 @@
   height: 88rpx;
   border-bottom: 1rpx solid #f0f0f0;
 }
-.user-list navigator{
+.user-list view{
   float: left;
   position: relative;
   width: 50%;
   text-align: center;
   font-size: 28rpx;
 }
-.user-list navigator.active::after{
+.user-list view.active::after{
   content: "";
   display: block;
   width: 110rpx;
@@ -77,6 +77,7 @@
 }
 .phone-message .old-phone input{
   padding-left: 160rpx;
+  font-size: 22rpx;
 }
 .phone-message .old-phone .text{
   position: absolute;
@@ -111,6 +112,10 @@
   font-size: 22rpx;
   padding-left: 26rpx;
 }
+/* .phone-message .send-code{
+  padding-right: 144rpx;
+  box-sizing: border-box;
+} */
 .phone-message .send-code .get-code{
   position: absolute;
   right: 0;
@@ -124,6 +129,7 @@
   border-bottom-right-radius: 6rpx;
   background-color: #CCC;
   font-size: 20rpx;
+  z-index: 99;
 }
 .post-bind-phone{
   margin: 30rpx auto 0 auto;
@@ -142,4 +148,86 @@
   width: 538rpx;
   height: 67rpx;
   z-index: -1;
+}
+/* 登录wxss */
+.login-bg{
+  display: block;
+  width: 693rpx;
+  height: 360rpx;
+  margin: 290rpx auto 0 auto;
+}
+.click-login{
+  position: relative;
+  width: 630rpx;
+  height: 67rpx;
+  margin: 275rpx auto 0 auto;
+  color: #FFF;
+  text-align: center;
+  line-height: 67rpx;
+  font-size: 28rpx;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.click-login::after{
+  border: none;
+}
+.click-login image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 630rpx;
+  height: 67rpx;
+  display: block;
+  z-index: -1;
+}
+/* //历史记录 */
+.not-history{
+  padding-top: 250rpx;
+}
+.not-history image{
+  width: 344rpx;
+  display: block;
+  height: 181rpx;
+  margin: 0 auto;
+}
+.not-history .text{
+  color: #666;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+.history-list-content .list{
+  width: 710rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.history-list-content .list .head-title{
+  padding-top: 14rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+}
+.history-list-content .list .head-title .fl{
+  font-size: 30rpx;
+}
+.history-list-content .list .head-title .fr{
+  color: #12becb;
+  font-size: 22rpx;
+}
+.history-list-content .list .head-title .fr.state-end{
+  color: #999;
+}
+.history-list-content .list .list-content{
+  font-size: 20rpx;
+  line-height: 1.6em;
+}
+.history-list-content .list .user-message{
+  height: 72rpx;
+  line-height: 72rpx;
+  padding-bottom: 20rpx;
+  font-size: 18rpx;
+  opacity: .4;
+}
+.history-list-content .list .user-message .name{
+  padding-right: 22rpx;
 }

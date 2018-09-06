@@ -1,3 +1,6 @@
+import { config } from '../../../utils/config';
+const app = getApp();
+
 Page({
 
   /**
@@ -11,7 +14,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(options)
+    const that = this;
+    var authCode = '';
+    that.getContentDetails(config.apiList.builtDetails, { id: options.id, auth_code: authCode}, function(data){
+
+    })
   },
 
   /**
@@ -20,7 +28,21 @@ Page({
   onReady: function () {
     
   },
-
+  getContentDetails: function (url, getData, callback) {
+    app.postApiData(url, getData, function (data) {
+      if (data.ret == 100) {
+        console.log(1)
+        callback(data);
+        console.log(data.data)
+      } else {
+        wx.showToast({
+          title: data.message,
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */

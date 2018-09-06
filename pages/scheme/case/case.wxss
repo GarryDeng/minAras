@@ -1,4 +1,5 @@
 @import "../../common/nav.wxss";
+@import "../../../wxParse/wxParse.wxss";
 .case-list{
   border-top: 20rpx solid #ededed;
   padding: 48rpx 20rpx;

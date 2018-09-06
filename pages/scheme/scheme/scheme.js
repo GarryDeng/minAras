@@ -23,9 +23,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    const that = this;
     that.getBanner(config.apiList.schemeBanner, function (data) {
-
+      that.setData({
+        imgUrls: data.data
+      })
     })
   },
   getBanner: function (url, callback) {
@@ -41,6 +43,11 @@ Page({
         });
       }
     });
+  },
+  goToNext: function (event) {
+    wx.navigateTo({
+      url: '../case/case?id=' + event.target.dataset.ids,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

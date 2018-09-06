@@ -39,7 +39,7 @@
 .click-details{
   height: 162rpx;
 }
-.click-details navigator{
+.click-details .look-details{
   height: 60rpx;
   line-height: 60rpx;
   border-radius: 30rpx;
