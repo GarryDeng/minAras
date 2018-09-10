@@ -1,19 +1,40 @@
+import { config } from '../../../utils/config';
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    listData: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    const that = this;
+    app.getApiData(config.apiList.schemewindowId, {id:options.id}, function (data) {
+      if (data.ret == 100) {
+        that.setData({
+          listData: data.data          
+        })
+      } else {
+        wx.showToast({
+          title: data.message,
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
   },
-
+  gotoDetails: function (e) {
+    const that = this;
+    wx.navigateTo({
+      url: `../caseDetails/case-details?id=${e.currentTarget.dataset.ids}`,
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,7 +1,7 @@
 <view class='tank-head'>
   <view class='list-search'>
-    <input value='' placeholder='搜索专家相关关键词' placeholder-style='color:#dcdcdc;line-height:36rpx;font-size:24rpx;' />
-    <image src='../../../utils/images/search.png'></image>
+    <input value='' bindblur='getKyeword' placeholder='搜索专家相关关键词' placeholder-style='color:#dcdcdc;line-height:36rpx;font-size:24rpx;' />
+    <image bindtap='getSearchValue' src='../../../utils/images/search.png'></image>
   </view>
   <view class='nav-list'>
     <view class='class-name' bindtap="clickClass">
@@ -16,7 +16,7 @@
 </view>
 
 <view class='list-content'>
-  <view class='team-list' wx:for="{{listData}}" wx:key="item.id">
+  <view class='team-list' wx:for="{{listData}}" wx:key="item.id" data-ids="{{item.id}}" bindtap='gotoDetails'>
     <view class='content-tatol'>
       <view class='img'>
         <image src="{{item.index_img}}" class="slide-image"/>

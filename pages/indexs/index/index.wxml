@@ -1,7 +1,7 @@
 <!--轮播图start  -->
 <swiper class='swiper-content' circular="{{circular}}" autoplay="{{autoplay}}"  bindchange="swiperChange" current="{{currentLength}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
-    <swiper-item>
+    <swiper-item data-ids="{{item.id}}" bindtap='gotoZuDetails'>
       <image src="{{item.image}}" class="slide-image"/>
     </swiper-item>
   </block>
@@ -14,13 +14,13 @@
 <!--轮播图end  -->
 <view class='specialist-head'>
   <view class="fl">推荐专家</view>
-  <navigator class="fr" url="">更多></navigator>
+  <navigator class="fr" url="../../tank/list/list">更多></navigator>
 </view>
 <!--  专家轮播图start -->
 <swiper class='swiper-specialist'  display-multiple-items= "3" autoplay="{{autoplayList}}" bindchange="swiperChangeList" current="{{currentList}}" circular="true">
   <block wx:for="{{listImgUrls}}" wx:key="{{item.id}}">
     <swiper-item>
-      <navigator url=''>
+      <navigator url="../../tank/details/details?id={{item.id}}">
         <view class='img'>
           <image src="{{item.index_img}}" class="slide-image" />
         </view>
@@ -37,14 +37,14 @@
 </view>
 <!--  专家轮播图end -->
 <view class='specialist-head'>
-  <view class="fl">产品分类</view>
-  <navigator class="fr" url="">更多></navigator>
+  <view class="fl">解决方案</view>
+  <!-- <navigator class="fr" url="../../scheme/scheme/scheme" >更多></navigator> -->
 </view>
 <!-- 产品轮播图start -->
 <swiper class='swiper-product' display-multiple-items="2.4" autoplay="{{autoplayProduct}}" current="{{currentProduct}}">
   <block wx:for="{{productUrls}}" wx:key="{{item.id}}">
     <swiper-item>
-      <navigator class='list' url=''>
+      <navigator class='list' url='../../scheme/case/case?id={{item.id}}'>
         <view class="img">
           <image src="{{item.image}}" class="slide-image" />
         </view>
@@ -58,9 +58,9 @@
 <view class="line-to-bottom">
   <view class='specialist-head'>
     <view class="fl">筑享汇</view>
-    <navigator class="fr" url="">更多></navigator>
+    <navigator class="fr" url="../../built/list/built-list">更多></navigator>
   </view>
-  <view class="remit-list">
+  <view class="remit-list" data-ids="{{indexHomeBig.id}}" bindtap='gotoZuDetails'>
     <view class="image">
       <image src="{{indexHomeBig.min_img}}" />
     </view>
@@ -70,7 +70,7 @@
       <view class="fr look"><image src="../../../../utils/images/read.png" /> {{indexHomeBig.views}}</view>
     </view>
   </view>
-  <view wx:for="{{indexHomeList}}" wx:key="{{item.id}}">
+  <view wx:for="{{indexHomeList}}" wx:key="{{item.id}}" data-ids="{{item.id}}" bindtap='gotoZuDetails'>
     <view class="case-list">
       <view class="fl case-text">
         <view class="text">{{item.title}}</view>
@@ -96,4 +96,3 @@
 
 <import src="../../common/nav" />
 <template is="footerText" ></template>
-<!-- <template is="nav" data='{{...navItem}}'></template> -->

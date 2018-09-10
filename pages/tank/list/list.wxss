@@ -7,7 +7,7 @@
   top: 0;
   width: 100%;
   height: 160rpx;
-  z-index: 9;
+  z-index: 99;
 }
 .list-search{
   width: 710rpx;
@@ -33,6 +33,7 @@
   right: 18rpx;
   top: 8rpx;
   opacity: .6;
+  z-index: 9;
 }
 .tank-head .nav-list{
   padding-top: 14rpx;
@@ -93,6 +94,7 @@
   text-align: center;
   font-size: 16rpx;
   color: #FFF;
+  z-index: 9;
 }
 .team-list .content-tatol .label image{
   width: 100%;

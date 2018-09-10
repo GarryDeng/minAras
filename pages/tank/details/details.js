@@ -1,14 +1,14 @@
+import { config } from "../../../utils/config";
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
+    pageData: [],
+    imgUrls: [],
     autoplay: true,
     interval: 5000,
     duration: 1000,
@@ -20,32 +20,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    const that = this;
+    that.getPageDetails(options.id);
   },
   swiperChange: function (e) {
     this.setData({
       currentLength: e.detail.current
     })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
   },
 
   /**
@@ -54,7 +35,23 @@ Page({
   onUnload: function () {
     
   },
-
+  getPageDetails: function (opid) {
+    const that = this;
+    app.getApiData(config.apiList.thinkTankExpertInfo, { id:opid }, function (data) {
+      if (data.ret == 100) {
+        console.log(data)
+        that.setData({
+          pageData: data.data
+        })
+      } else {
+        wx.showToast({
+          title: data.message,
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

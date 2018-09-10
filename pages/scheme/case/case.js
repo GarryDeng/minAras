@@ -10,6 +10,7 @@ Page({
   data: {
     contentDatails: [],
     caseId: "",
+    arrTitle: [],
   },
 
   /**
@@ -17,34 +18,39 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
+    var options = { id: 11}
     that.setData({
       caseId: options.id
     });
     var replyArr = [];
     that.getContentDetails(config.apiList.schemeBannerId,{id:options.id},function(data){
       data.data.funtions.forEach((res)=>{
-        
+        that.data.arrTitle.push({name:res.name,id:res.id})
+        console.log(res)
         replyArr.push(res.content.replace(/[\\]/g,''));
-        
       });
-      // WxParse.wxParseTemArray("replyTemArray", 'reply', replyArr.length, that)
       for (let i = 0; i < replyArr.length; i++) {
         WxParse.wxParse('reply' + i, 'html', replyArr[i], that);
         if (i === replyArr.length - 1) {
           WxParse.wxParseTemArray("replyTemArray", 'reply', replyArr.length, that)
         }
       }
-      // console.log(JSON.parse(that.data.nodes))
       that.setData({
-        contentDatails: data.data
+        contentDatails: data.data,
+        arrTitle: that.data.arrTitle
       })
+    })
+  },
+  gotoWindowIcon: function () {
+    const that = this;
+    wx.navigateTo({
+      url: `../list/list?id=${that.data.caseId}`,
     })
   },
   getContentDetails: function (url, getData, callback) {
     app.getApiData(url, getData, function (data) {
       if (data.ret == 100) {
         callback(data);
-        console.log(data.data)
       } else {
         wx.showToast({
           title: data.message,

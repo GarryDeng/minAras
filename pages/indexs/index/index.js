@@ -25,10 +25,11 @@ Page({
     //筑享慧万家
     indexHomeBig: [],
     indexHomeList:[],
-    // 当前页面
-    navItem: {
-      url: 'index',
-    },
+  },
+  gotoZuDetails: function (e) {
+    wx.navigateTo({
+      url: `../../built/details/details?id=${e.currentTarget.dataset.ids}`,
+    })
   },
   swiperChange: function (e) {
     this.setData({

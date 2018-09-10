@@ -8,11 +8,8 @@
   overflow: hidden;
   border-radius: 10rpx;
 }
-.swiper-content image{
-  width: 710rpx;
-  display: block;
-  height: 400rpx;
-  position: relative;
+.wxParse-img{
+  width: 100%;
 }
 .dots{
   position: relative;

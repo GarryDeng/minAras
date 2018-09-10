@@ -1,23 +1,25 @@
+<import src="../../../wxParse/wxParse.wxml" />
+
 <view class='details'>
-  <image class='banner' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+  <image class='banner' src='{{pageData.top_img}}'></image>
   <view class='details-content'>
-    <view class='title'>物联网基本安全的三个简单步骤</view>
+    <view class='title'>{{pageData.title}}</view>
     <view class='look-read'>
-      <view class='fl look'><image src='../../../utils/images/read.png'></image> 900</view>
-      <view class='fl'>2018/07/19</view>
+      <view class='fl look'><image src='../../../utils/images/read.png'></image> {{pageData.views}}</view>
+      <view class='fl'>{{pageData.inputtime}}</view>
     </view>
     <view class='text'>
-      有那么多的公司参与物联网技术研发，对物联网多样性和可用性来说非常重要，但也会带来一些问题。目前该领域的大公司之间互相竞争，争夺物联网统治地位，在他们争斗越来越激烈的同时，较小的公司正在创建自己的物联有那么多的公司参与物联网技术研发，对物联网多样性和可用性来说非常重要，但也会带来一些问题。目前该领域的大公司之间互相竞争，争夺物联网统治地位，在他们争斗越来越激烈的同时，较小的公司正在创建自己的物联有那么多的公司参与物联网技术研发，对物联网多样性和可用性来说非常重要，但也会带来一些问题。目前该领域的大公司之间互相竞争，争夺物联网统治地位，在他们争斗越来越激烈的同时，较小的公司正在创建自己的物联有那么多的公司参与物联网技术研发，对物联网多样性和可用性来说非常重要，但也会带来一些问题。目前该领域的大公司之间互相竞争，争夺物联网统治地位，在他们争斗越来越激烈的同时，较小的公司正在创建自己的物联有那么多的公司参与物联网技术研发，对物联网多样性和可用性来说非常重要，但也会带来一些问题。目前该领域的大公司之间互相竞争，争夺物联网统治地位，在他们争斗越来越激烈的同时，较小的公司正在创建自己的物联有那么多的公司参与物联网技术研发，对物联网多样性和可用性来说非常重要，但也会带来一些问题。目前该领域的大公司之间互相竞争，争夺物联网统治地位，在他们争斗越来越激烈的同时，较小的公司正在创建自己的物联
+      <template is="wxParse" data="{{wxParseData:builtDetails.nodes}}"/>
     </view>
   </view>
 </view>
 <view class='pev-next'>
   <view class='list-fixed'>
-    <navigator class='fl page' url=''>
+    <navigator class='fl page' open-type="redirect" url='../details/details?id={{pageData.pre_id}}'>
       <image src='../../../utils/images/left.png'></image>
       上一篇
     </navigator>
-    <navigator class='fr page' url=''>
+    <navigator class='fr page' open-type="redirect" url='../details/details?id={{pageData.next_id}}'>
       <image src='../../../utils/images/right.png'></image>
       下一篇
     </navigator>

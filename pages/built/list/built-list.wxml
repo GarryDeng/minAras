@@ -1,15 +1,10 @@
-<!--轮播图start  -->
-<swiper class='swiper-content' display-multiple-items = '{{displayMultipleItems}}' >
-  <block wx:for="{{textUrls}}" wx:key="{{item.id}}">
-    <swiper-item>
-    <view data-ids="{{item.id}}" bindtap="getNavId" class="{{item.id==catId?'active':''}}">{{item.name}}</view>
-    </swiper-item>
-  </block>
-</swiper>
-<!--轮播图end  -->
+<view class='swiper-content'>
+  <scroll-view scroll-x="true">
+    <view wx:for="{{textUrls}}" wx:key="{{item.id}}" data-ids="{{item.id}}" bindtap="getNavId" class="{{item.id==catId?'active':''}}">{{item.name}}</view>
+  </scroll-view>
+</view>
 
 <view class='built-list'>
-
   <view class='list' wx:for="{{builtContent}}" wx:key="{{item.id}}">
     <image bindtap="goToContent" data-ids="{{item.id}}" class='img' src='{{item.min_img}}'></image>
     <view bindtap="goToContent" data-ids="{{item.id}}" class='text'>{{item.title}}</view>
@@ -19,7 +14,7 @@
     </view>
   </view>
 </view>
-<navigator class='link-fixed' url=''>
+<navigator class='link-fixed' url='../../me/feedback/feedback'>
   <image src='../../../utils/images/business.png'></image>
 </navigator>
 <import src="../../common/nav" />

@@ -27,10 +27,13 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
-    const getTimeOutIn = new Date().getTime();
     that.setData({
       phoneHint: !that.data.phone ? "请输入绑定手机号码" : "请输入绑定新手机号码"
     });
+    that.stateInit();
+  },
+  creatUserMessage: function () {
+    const that = this;
     wx.getStorage({
       key: 'userMessage',
       success: function (res) {
@@ -50,27 +53,25 @@ Page({
       },
       complete: () => {
         if (!that.data.phone) {
-          that.setData({
+          return that.setData({
             activeClass: false,
           })
         }
-        that.postPhoneNumber(config.apiList.consultation, { auth_code: that.data.authCode }, (res) => {
-          that.setData({
-            postHistoryList:res.data.infos
-          })
-          console.log(res)
-        })
+        that.getHisotyList();
       }
     });
-    
+  },
+  stateInit: function () {
+    const that = this;
+    const getTimeOutIn = new Date().getTime();
     wx.getSetting({
       success: function (res) {
-        if (res.authSetting['scope.userInfo']&&that.data.timeBoolean <= getTimeOutIn) {
+        if (res.authSetting['scope.userInfo'] && that.data.timeBoolean <= getTimeOutIn) {
           wx.showLoading({
             title: '登录中',
           });
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          Promise.all([that.getUserInfoMessage(), that.getLoginMessage()]).then((data) =>{
+          Promise.all([that.getUserInfoMessage(), that.getLoginMessage()]).then((data) => {
             that.postLogin(config.apiList.loginUrl, { code: data[1], nickname: data[0].nickName }, (res) => {
               wx.hideLoading();
               //储存用户登录信息
@@ -81,18 +82,16 @@ Page({
                 userImg: res.data.userdata.headimgurl ? res.data.userdata.headimgurl : '../../../utils/images/default-user.png',
                 phone: res.data.userdata.phone
               });
+              that.getHisotyList();
             })
           });
-        } else if (that.data.timeBoolean){
+        } else if (that.data.timeBoolean) {
           wx.hideLoading();
           that.pageStateBoolean();
+          that.creatUserMessage();
         }
-      },
-      complete: () => {
-        
       }
     });
-    
   },
   bindGetUserInfo: function(event) {
     const that = this;
@@ -114,6 +113,7 @@ Page({
             userImg: res.data.userdata.headimgurl ? res.data.userdata.headimgurl : '../../../utils/images/default-user.png',
             phone: res.data.userdata.phone
           });
+          that.getHisotyList();
         })
       });
     }else{
@@ -295,6 +295,7 @@ Page({
       that.setData({
         activeClass: true,
       });
+      that.getHisotyList();
       wx.showToast({
         title: '绑定成功',
         icon: 'none',
@@ -308,9 +309,19 @@ Page({
     });
   },
   trueClick: function () {
-    this.setData({
+    const that = this;
+    that.setData({
       activeClass: true
-    })
+    });
+    that.getHisotyList();
+  },
+  getHisotyList: function () {
+    const that = this;
+    that.postPhoneNumber(config.apiList.consultation, { auth_code: that.data.authCode }, (res) => {
+      that.setData({
+        postHistoryList: res.data.infos
+      })
+    });
   },
   falseClick: function () {
     this.setData({

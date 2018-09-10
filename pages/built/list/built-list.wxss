@@ -3,7 +3,7 @@
   height: 90rpx;
   line-height: 90rpx;
   width: 710rpx;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   left: 0;
   top: 0;
   padding: 0 20rpx;
@@ -11,12 +11,31 @@
   overflow: hidden;
   background-color: #FFF;
   z-index: 3;
+  white-space: nowrap;
+}
+.swiper-content scroll-view{
+  font-size: 0;
 }
 .swiper-content view{
   font-size: 28rpx;
+  display: inline-block;
+  padding: 0 20rpx;
+  position: relative;
+  height: 90rpx;
+  line-height: 90rpx;
+  box-sizing: border-box;
 }
 .swiper-content view.active{
   font-weight: bold;
+  border-bottom: 5rpx solid #000;
+}
+.swiper-content view.active:after{
+  content: "";
+  bottom: 0;
+  display: block;
+  left: 20rpx;
+  right: 20rpx;
+  border-bottom: 5rpx solid #000;
 }
 .built-list{
   background-color: #ededed;

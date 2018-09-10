@@ -1,27 +1,21 @@
 {
   "pages":[
-    "pages/scheme/scheme/scheme",
-    "pages/me/bindPhone/bind-phone",
-    
-    "pages/built/list/built-list",
     "pages/indexs/index/index",
     "pages/built/details/details",
     
     "pages/scheme/caseDetails/case-details",
-    
-    "pages/scheme/case/case",
-    "pages/scheme/list/list",
-    
-    "pages/tank/list/list",
     "pages/tank/thinkTank/think-tank",
+    "pages/scheme/case/case",
+    "pages/tank/list/list",
+    "pages/scheme/scheme/scheme",
+    
+    "pages/built/list/built-list",
     
     "pages/me/feedback/feedback",
-    "pages/tank/details/details",
+    "pages/me/bindPhone/bind-phone",
     
-    
-    
-    
-    "pages/me/history/history"
+    "pages/scheme/list/list",
+    "pages/tank/details/details"
   ],
   "window":{
     "backgroundTextStyle":"light",

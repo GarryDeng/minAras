@@ -1,49 +1,12 @@
 <view class='scheme-banner'>
   <image src='../../../utils/images/scheme-banner.png'></image>
-  <view class='text'>解决方案的名称</view>
+  <view class='text'>{{listData.name}}</view>
 </view>
 
 <view class='case-list'>
-  <view class='case'>
-    <image class='icon' src='../../../utils/images/icon.png'></image>
-    <view class='window'>
-    物业管理系统
-    </view>
-  </view>
-
-  <view class='case'>
-    <image class='icon' src='../../../utils/images/icon.png'></image>
-    <view class='window'>
-    物业管理系统物业管
-    </view>
-  </view>
-
-  <view class='case'>
-    <image class='icon' src='../../../utils/images/icon.png'></image>
-    <view class='window'>
-    物业管理系统
-    </view>
-  </view>
-
-  <view class='case'>
-    <image class='icon' src='../../../utils/images/icon.png'></image>
-    <view class='window'>
-    物业管理系统
-    </view>
-  </view>
-
-  <view class='case'>
-    <image class='icon' src='../../../utils/images/icon.png'></image>
-    <view class='window'>
-    物业管理系统
-    </view>
-  </view>
-
-  <view class='case'>
-    <image class='icon' src='../../../utils/images/icon.png'></image>
-    <view class='window'>
-    物业管理系统
-    </view>
+  <view class='case' wx:for="{{listData.system}}" wx:key="{{item.id}}" data-ids="{{item.id}}" bindtap='gotoDetails'>
+    <image class='icon' src='{{item.image}}'></image>
+    <view class='window'>{{item.name}}</view>
   </view>
 </view>
 

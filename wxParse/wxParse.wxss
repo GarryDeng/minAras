@@ -95,6 +95,7 @@ view{
 
 .wxParse-img{
     /*background-color: #efefef;*/
+    width: 100%;
     overflow: hidden;
 }
 

@@ -15,8 +15,15 @@ Page({
     classShow: false,
     sIdShow: false,
     sidList: [],//专业
+    keyword:'',
+    isKyeword: false,
     // fsrtName: [],//一级名称
     // listName: [],//二级名称
+  },
+  getKyeword: function (e){
+    this.setData({
+      keyword: e.detail.value
+    })
   },
   clickClass: function() {
     this.setData({
@@ -48,12 +55,18 @@ Page({
     this.setData({
       classShow: false,
       pageNumber: 0,
+      isKyeword: false,
     });
     that.getPageList(config.apiList.thinkTankExpertList, function (data) {//专家列表
       that.setData({
         listData: data.data
       })
     });
+  },
+  gotoDetails: function (e) {
+    wx.navigateTo({
+      url: `../details/details?id=${e.currentTarget.dataset.ids}`,
+    })
   },
   affirmSId: function () {
     var that = this;
@@ -65,6 +78,7 @@ Page({
     this.setData({
       sIdShow: false,
       pageNumber: 0,
+      isKyeword: false,
     });
     that.getPageList(config.apiList.thinkTankExpertList, function (data) {//专家列表
       that.setData({
@@ -93,15 +107,20 @@ Page({
       });
     })
   },
-  getPageList: function (url,callback) {
-    var that = this;
-    that.setData({
-      pageNumber: Number(that.data.pageNumber) + 1
-    })
-    app.getApiData(url, { page: that.data.pageNumber, cid: that.data.classId, sid: that.data.sid}, function (data) {
+  getSearchValue: function () {
+    const that = this;
+    if(that.data.keyword == "") {
+      return wx.showToast({
+        title: "请输入关键字",
+        icon: 'none',
+        duration: 2000
+      });
+    }
+    app.getApiData(config.apiList.thinkTankExpertList, { kyeword:that.data.keyword}, function (data) {
       if (data.ret == 100) {
-        callback(data);
-        console.log(data.data)
+        that.setData({
+          listData: data.data
+        })
       } else {
         wx.showToast({
           title: data.message,
@@ -111,11 +130,28 @@ Page({
       }
     });
   },
+  getPageList: function (url,callback) {
+    var that = this;
+    that.setData({
+      pageNumber: Number(that.data.pageNumber) + 1
+    })
+    app.getApiData(url, { page: that.data.pageNumber, cid: that.data.classId, sid: that.data.sid}, function (data) {
+      if (data.ret == 100) {
+        callback(data);
+      } else {
+        wx.showToast({
+          title: data.message,
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
+  },
+  
   getDataWay: function (url, callback) {
     app.getApiData(url, {}, function (data) {
       if (data.ret == 100) {
         callback(data);
-        console.log(data.data)
       } else {
         wx.showToast({
           title: data.message,
@@ -130,16 +166,12 @@ Page({
     this.setData({
       classId: this.data.classList[classListId].id
     });
-    console.log(this.data.classList[classListId].id)
-    // console.log(classListId)
   },
   bindChangeSlid: function (e) {
     var classListId = e.detail.value;
     this.setData({
       sid: this.data.sidList[classListId].id
     });
-    console.log(this.data.sid)
-    // console.log(classListId)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -154,25 +186,14 @@ Page({
   onShow: function () {
     
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
     var that = this;
+    if (that.data.isKyeword) {
+      return false;
+    }
     that.getPageList(config.apiList.thinkTankExpertList, function (data) {//专家列表
       var listData = that.data.listData;
       console.log(listData)

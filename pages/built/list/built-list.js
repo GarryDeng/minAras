@@ -27,6 +27,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    });
     const that = this;
     that.getBanner(config.apiList.builtListNav,function(data) {
       var dataNav = that.data.textUrls;
@@ -38,6 +41,7 @@ Page({
       });
     });
     that.getContent(config.apiList.builtList, function(data) {
+      wx.hideLoading()
       that.setData({
         builtContent: data.data
       })

@@ -1,5 +1,6 @@
 import { config } from '../../../utils/config';
 const app = getApp();
+const WxParse = require("../../../wxParse/wxParse.js");
 
 Page({
 
@@ -7,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    pageData: [],
+    authCode: ''
   },
 
   /**
@@ -15,13 +17,28 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    // var options = {id: 3};
     const that = this;
-    var authCode = '';
-    that.getContentDetails(config.apiList.builtDetails, { id: options.id, auth_code: authCode}, function(data){
-
+    wx.getStorage({
+      key: 'userMessage',
+      success: (res) => {
+        // that.setData({
+        //   authCode: res.data[1]
+        // })
+      },
+      complete: () =>{
+        that.getContentDetails(config.apiList.builtDetails, { id: options.id, auth_code: that.data.authCode }, function (data) {
+          console.log(data.data)
+          const contentDetails = data.data.content;
+          WxParse.wxParse("builtDetails", 'html', contentDetails, that)
+          that.setData({
+            pageData: data.data
+          })
+        })
+      }
     })
+    
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -33,7 +50,6 @@ Page({
       if (data.ret == 100) {
         console.log(1)
         callback(data);
-        console.log(data.data)
       } else {
         wx.showToast({
           title: data.message,
