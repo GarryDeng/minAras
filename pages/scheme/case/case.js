@@ -18,7 +18,7 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
-    var options = { id: 11}
+    // var options = { id: 11}
     that.setData({
       caseId: options.id
     });

@@ -1,5 +1,5 @@
 var config = {
-  baseHref: 'http://t.xzlii.com/',
+  baseHref: 'https://t.xzlii.com/',
   apiList: {
     indexBanner: 'api.php?op=wechat_index&act=banner', //首页轮播图
     indexExpert: 'api.php?op=wechat_index&act=expert_rec', //推荐专家
@@ -22,6 +22,7 @@ var config = {
     builtListNav: 'api.php?op=wechat_news&act=category',//资讯分类标题
     builtList: 'api.php?op=wechat_news&act=list',//资讯分类页数与分类
     builtDetails: 'api.php?op=wechat_news&act=news_info',//资讯详情
+    isLike: 'api.php?op=wechat_news&act=like',//喜欢资讯详情
     loginUrl: 'api.php?op=wechat_member&act=login',//登录
     getPhoneCode: 'api.php?op=wechat_member&act=sms_code',//获取手机验证码
     bindPhoneMessage: 'api.php?op=wechat_member&act=bind_phone',//绑定手机

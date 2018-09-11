@@ -70,3 +70,22 @@
   display: block;
   margin: 0 auto;
 }
+.like-number{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -50rpx;
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 1.6em;
+  color: #999;
+}
+.like-number .like{
+  display: block;
+  margin: 0 auto;
+  padding-top: 22rpx;
+  width: 38rpx;
+  height: 38rpx;
+}

@@ -9,7 +9,8 @@ Page({
    */
   data: {
     pageData: [],
-    authCode: ''
+    authCode: '',
+    id: '',
   },
 
   /**
@@ -22,17 +23,17 @@ Page({
     wx.getStorage({
       key: 'userMessage',
       success: (res) => {
-        // that.setData({
-        //   authCode: res.data[1]
-        // })
+        that.setData({
+          authCode: res.data[1]
+        })
       },
       complete: () =>{
         that.getContentDetails(config.apiList.builtDetails, { id: options.id, auth_code: that.data.authCode }, function (data) {
-          console.log(data.data)
           const contentDetails = data.data.content;
           WxParse.wxParse("builtDetails", 'html', contentDetails, that)
           that.setData({
-            pageData: data.data
+            pageData: data.data,
+            id: options.id
           })
         })
       }
@@ -93,7 +94,44 @@ Page({
   onReachBottom: function () {
     
   },
-
+  clickLike: function () {
+    const that = this;
+    if(!that.data.authCode)
+    return wx.showModal({
+      title: '温馨提示',
+      content: '是否前往登陆',
+      success: (res) => {
+        if(res.confirm){
+          wx.reLaunch({
+            url: '../../me/bindPhone/bind-phone',
+            fail: (err) => {
+              console.log(err)
+            }
+          })
+        }
+      }
+    });
+    that.getContentDetails(config.apiList.isLike, { id: that.data.id, auth_code: that.data.authCode }, function (data) {
+      console.log(data)
+      if (data.ret == 100) {
+        that.data.pageData.is_like = 1;     
+        that.setData({
+          pageData: that.data.pageData
+        })
+        wx.showToast({
+          title: "点赞成功",
+          icon: 'none',
+          duration: 2000
+        });
+      } else {
+        wx.showToast({
+          title: data.message,
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    })
+  },
   /**
    * 用户点击右上角分享
    */

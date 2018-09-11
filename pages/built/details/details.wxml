@@ -19,6 +19,12 @@
       <image src='../../../utils/images/left.png'></image>
       上一篇
     </navigator>
+    <view class='like-number' bindtap='clickLike'>
+      <image wx:if="{{pageData.is_like!=0}}" class='like' src='../../../utils/images/like.png'></image>
+      <image wx:if="{{pageData.is_like==0}}" class='like' src='../../../utils/images/not-like.png'></image>
+      
+      {{pageData.views}}
+    </view>
     <navigator class='fr page' open-type="redirect" url='../details/details?id={{pageData.next_id}}'>
       <image src='../../../utils/images/right.png'></image>
       下一篇
