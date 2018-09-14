@@ -32,12 +32,19 @@
   /* margin: 0 auto; */
   padding: 20rpx;
 }
+.case-list:after{
+  content:"";
+  width: 200rpx;
+  display: block;
+}
 .case-list .case{
   width: 200rpx;
   height: 200rpx;
   border-radius: 18rpx;
   background-color: #FFF;
   margin-bottom: 18rpx;
+  position: relative;
+  overflow: hidden;
 }
 .case-list .case .icon{
   width: 60rpx;

@@ -16,7 +16,9 @@ Page({
     circular: true,
     page: 0, //页数
     catId: 6,
+    optionsId: '',
     builtContent: [],
+    getContentUrl: config.apiList.builtList,
     // // 当前页面
     // navItem: {
     //   url: 'index',
@@ -27,10 +29,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that = this;
+    // var options = {id:1};
+    if(options.id){
+      wx.setNavigationBarTitle({
+        title: 'ARAS-专家观点列表',
+      });
+      that.setData({
+        optionsId: options.id,
+        getContentUrl: config.apiList.thinkTankViewpointList
+      })
+    }
+    
     wx.showLoading({
       title: '加载中',
     });
-    const that = this;
+    if(!options.id)
     that.getBanner(config.apiList.builtListNav,function(data) {
       var dataNav = that.data.textUrls;
       data.data.forEach(res=>{
@@ -40,7 +54,7 @@ Page({
         textUrls: dataNav
       });
     });
-    that.getContent(config.apiList.builtList, function(data) {
+    that.getContent(that.data.getContentUrl, function(data) {
       wx.hideLoading()
       that.setData({
         builtContent: data.data
@@ -67,7 +81,10 @@ Page({
     console.log(pageNumber)
     that.setData({
       page: pageNumber
-    })
+    });
+    var dataObj = { page: that.data.page };
+    if (!that.data.optionsId)
+      dataObj['catid'] = that.data.catId;
     app.getApiData(url, { catid: that.data.catId , page: that.data.page}, function (data) {
       if (data.ret == 100) {
         callback(data);
@@ -94,8 +111,9 @@ Page({
     });
   },
   goToContent: function (event) {
+    const that = this;
     wx.navigateTo({
-      url: '../details/details?id=' + event.target.dataset.ids
+      url: `../details/details?id=${event.target.dataset.ids}&type=${that.data.optionsId}`
     })
   },
   /**
@@ -139,7 +157,7 @@ Page({
   onReachBottom: function () {
     const that = this;
     var conrentList = that.data.builtContent;
-    that.getContent(config.apiList.builtList, function (data) {
+    that.getContent(that.data.getContentUrl, function (data) {
       data.data.forEach(res=>{
         conrentList.push(res);
       })

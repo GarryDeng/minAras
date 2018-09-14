@@ -1,16 +1,16 @@
-<view class='swiper-content'>
+<view class='swiper-content' wx:if="{{optionsId!=1}}">
   <scroll-view scroll-x="true">
     <view wx:for="{{textUrls}}" wx:key="{{item.id}}" data-ids="{{item.id}}" bindtap="getNavId" class="{{item.id==catId?'active':''}}">{{item.name}}</view>
   </scroll-view>
 </view>
 
-<view class='built-list'>
+<view class='built-list' style='{{optionsId==1? "margin-top:0" : ""}}'>
   <view class='list' wx:for="{{builtContent}}" wx:key="{{item.id}}">
-    <image bindtap="goToContent" data-ids="{{item.id}}" class='img' src='{{item.min_img}}'></image>
+    <image bindtap="goToContent" data-ids="{{item.id}}" class='img' src='{{item.min_img?item.min_img:item.thumb}}'></image>
     <view bindtap="goToContent" data-ids="{{item.id}}" class='text'>{{item.title}}</view>
     <view bindtap="goToContent" data-ids="{{item.id}}" class='time-look'>
-      <view class='fr'>{{item.inputtime}}</view>
-      <view class='fr look'><image src='../../../utils/images/read.png'></image> {{item.views}}</view>
+      <view class='fr'>{{item.inputtime?item.inputtime:item.addtime}}</view>
+      <view wx:if="{{item.views}}" class='fr look'><image src='../../../utils/images/read.png'></image> {{item.views}}</view>
     </view>
   </view>
 </view>

@@ -18,6 +18,7 @@ Page({
     dotsList: [],
     autoplayList: false,
     currentList: 0,
+    indexListLength: 0,
     // 产品轮播图参数
     productUrls: [],
     autoplayProduct: false,
@@ -37,8 +38,11 @@ Page({
     })
   },
   swiperChangeList: function (e) {
+    // var indexLength = e.detail.current === 0 ? 0 : e.detail.current - 2;
+    // console.log(e.detail.current)
     this.setData({
-      currentList: e.detail.current
+      currentList: e.detail.current,
+      // indexListLength: indexLength
     })
   },
   /**
@@ -54,7 +58,7 @@ Page({
     that.getBanner(config.apiList.indexExpert,function(data){//专家轮播
       that.setData({
         listImgUrls: data.data,
-        dotsList: data.data.slice(0, data.data.length-2)
+        dotsList: data.data.slice(0, data.data.length == 3 ? -2 : data.data.length)
       })
     });
     that.getBanner(config.apiList.indexProgramme, function (data) {//产品轮播

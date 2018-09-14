@@ -21,19 +21,13 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
+    // var options = { id: 3};
     that.getPageDetails(options.id);
   },
   swiperChange: function (e) {
     this.setData({
       currentLength: e.detail.current
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
   },
   getPageDetails: function (opid) {
     const that = this;
@@ -52,20 +46,12 @@ Page({
       }
     });
   },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
+  gotoBuiltDetails: function (e) {
+    const that = this;
+    wx.navigateTo({
+      url: `../../built/details/details?id=${e.currentTarget.dataset.ids}&type=1`,
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
   /**
    * 用户点击右上角分享
    */

@@ -11,6 +11,8 @@ Page({
     pageData: [],
     authCode: '',
     id: '',
+    typeId: '',
+    getContentUrl: config.apiList.builtDetails
   },
 
   /**
@@ -20,6 +22,15 @@ Page({
     console.log(options)
     // var options = {id: 3};
     const that = this;
+    if(options.type){
+      wx.setNavigationBarTitle({
+        title: 'ARAS-专家观点详情',
+      })
+      that.setData({
+        typeId: options.type,
+        getContentUrl: config.apiList.thinkTankViewpointInfo
+      })
+    }
     wx.getStorage({
       key: 'userMessage',
       success: (res) => {
@@ -28,7 +39,17 @@ Page({
         })
       },
       complete: () =>{
-        that.getContentDetails(config.apiList.builtDetails, { id: options.id, auth_code: that.data.authCode }, function (data) {
+        if (!options.type)
+        that.getContentDetails( that.data.getContentUrl, { id: options.id, auth_code: that.data.authCode }, function (data) {
+          const contentDetails = data.data.content;
+          WxParse.wxParse("builtDetails", 'html', contentDetails, that)
+          that.setData({
+            pageData: data.data,
+            id: options.id
+          })
+        })
+        else
+        app.getApiData(that.data.getContentUrl, { id: options.id }, function (data) {
           const contentDetails = data.data.content;
           WxParse.wxParse("builtDetails", 'html', contentDetails, that)
           that.setData({
@@ -111,15 +132,17 @@ Page({
         }
       }
     });
-    that.getContentDetails(config.apiList.isLike, { id: that.data.id, auth_code: that.data.authCode }, function (data) {
+    var isLike = that.data.pageData.is_like == 0 ? 1 : 0;
+    that.getContentDetails(config.apiList.isLike, { id: that.data.id, auth_code: that.data.authCode, type: isLike }, function (data) {
       console.log(data)
       if (data.ret == 100) {
-        that.data.pageData.is_like = 1;     
+        that.data.pageData.is_like = isLike;     
         that.setData({
           pageData: that.data.pageData
         })
+        var message = isLike == 1 ? '点赞成功' : '已取消';
         wx.showToast({
-          title: "点赞成功",
+          title: message,
           icon: 'none',
           duration: 2000
         });

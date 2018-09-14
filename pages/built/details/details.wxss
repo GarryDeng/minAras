@@ -17,6 +17,10 @@
   height: 400rpx;
   position: relative;
 }
+.details-content image{
+  position: relative;
+  left: -20rpx;
+}
 .look-read{
   line-height: 44rpx;
   opacity: 0.6;

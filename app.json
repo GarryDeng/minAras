@@ -1,15 +1,18 @@
 {
   "pages":[
     "pages/indexs/index/index",
-    "pages/built/details/details",
-    
-    "pages/scheme/caseDetails/case-details",
     "pages/tank/thinkTank/think-tank",
+    "pages/built/list/built-list",
+    
+    
+    "pages/built/details/details",
+    "pages/scheme/caseDetails/case-details",
+    
     "pages/scheme/case/case",
     "pages/tank/list/list",
     "pages/scheme/scheme/scheme",
     
-    "pages/built/list/built-list",
+    
     
     "pages/me/feedback/feedback",
     "pages/me/bindPhone/bind-phone",

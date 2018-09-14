@@ -43,7 +43,7 @@
   </view>
   
   <view class='history-list-content' wx:if="{{activeClass}}" >
-    <view class='list' wx:for="{{postHistoryList}}" wx:key="{{item.id}}">
+    <view class='list' wx:if="{{postHistoryList.length}}" wx:for="{{postHistoryList}}" wx:key="{{item.id}}">
       <view class='head-title'>
         <view wx:if="{{item.type == 1}}" class='fl'>咨询合作</view>
         <view wx:if="{{item.type == 2}}" class='fl'>入驻智库</view>
@@ -60,7 +60,7 @@
       </view>
     </view>
   <!-- 无记录 -->
-  <view class='not-history' wx:if="{{!postHistoryList}}" >
+  <view class='not-history' wx:if="{{!postHistoryList.length}}" >
     <image src='../../../utils/images/not-history.png'></image>
     <view class='text'>暂无内容哦</view>
   </view>

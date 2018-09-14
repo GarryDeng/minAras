@@ -1,19 +1,19 @@
 <import src="../../../wxParse/wxParse.wxml" />
 
 <view class='details'>
-  <image class='banner' src='{{pageData.top_img}}'></image>
+  <image class='banner' src='{{pageData.min_img}}'></image>
   <view class='details-content'>
     <view class='title'>{{pageData.title}}</view>
     <view class='look-read'>
       <view class='fl look'><image src='../../../utils/images/read.png'></image> {{pageData.views}}</view>
-      <view class='fl'>{{pageData.inputtime}}</view>
+      <view class='fl'>{{pageData.inputtime?pageData.inputtime:pageData.addtime}}</view>
     </view>
     <view class='text'>
       <template is="wxParse" data="{{wxParseData:builtDetails.nodes}}"/>
     </view>
   </view>
 </view>
-<view class='pev-next'>
+<view wx:if="{{typeId!=1}}" class='pev-next'>
   <view class='list-fixed'>
     <navigator class='fl page' open-type="redirect" url='../details/details?id={{pageData.pre_id}}'>
       <image src='../../../utils/images/left.png'></image>

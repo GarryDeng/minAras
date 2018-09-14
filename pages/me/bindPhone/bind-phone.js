@@ -19,7 +19,7 @@ Page({
     codeHintMessage:'获取验证码',
     activeClass: true,
     oldPhone: '',
-    postHistoryList: '',
+    postHistoryList: [],
   },
 
   /**
@@ -136,7 +136,7 @@ Page({
   pageStateBoolean: function () {
     const that = this;
     wx.setNavigationBarTitle({
-      title: '小筑理-绑定手机'
+      title: 'ARAS-绑定手机'
     });
     that.setData({
       loginBoolean: false

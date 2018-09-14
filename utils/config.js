@@ -1,5 +1,6 @@
 var config = {
-  baseHref: 'https://t.xzlii.com/',
+  // baseHref: 'http://t.xzlii.com/', //本地环境
+  baseHref: 'https://www.smartaras.com/', //体验版
   apiList: {
     indexBanner: 'api.php?op=wechat_index&act=banner', //首页轮播图
     indexExpert: 'api.php?op=wechat_index&act=expert_rec', //推荐专家
@@ -16,9 +17,9 @@ var config = {
     thinkTankExpertInfo: 'api.php?op=wechat_thinktank&act=expert_info',//专家详情
     thinkTankViewpointInfo: 'api.php?op=wechat_thinktank&act=viewpoint_info',//观点详情
     schemeBanner: 'api.php?op=wechat_programme&act=init',//解决方案
-    schemeBannerId: 'api.php?op=wechat_programme&a=programme_info',//解决方案详情
+    schemeBannerId: 'api.php?op=wechat_programme&act=programme_info',//解决方案详情
     schemewindowId: 'api.php?op=wechat_programme&act=sys',//系统构成
-    schemewindowDetailsId: 'api.php?op=wechat_programme&a=sys_info',//系统构成详情
+    schemewindowDetailsId: 'api.php?op=wechat_programme&act=sys_info',//系统构成详情
     builtListNav: 'api.php?op=wechat_news&act=category',//资讯分类标题
     builtList: 'api.php?op=wechat_news&act=list',//资讯分类页数与分类
     builtDetails: 'api.php?op=wechat_news&act=news_info',//资讯详情

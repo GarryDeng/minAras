@@ -32,7 +32,7 @@
 </swiper>
 <view class='dots line-to'>
   <block wx:for="{{dotsList}}" wx:key="{{item.id}}">
-    <view class='dot {{index ==  currentList ? "active" : ""}}'></view>
+    <view class='dot {{currentList == index ? "active" : ""}}'></view>
   </block>
 </view>
 <!--  专家轮播图end -->
@@ -50,6 +50,17 @@
         </view>
         <view class="china">{{item.name}}</view>
         <view class='english'>{{item.name_en}}</view>
+      </navigator>
+    </swiper-item>
+  </block>
+  <block>
+    <swiper-item>
+      <navigator open-type="switchTab" class='list' url='../../scheme/scheme/scheme'>
+        <view class="img">
+          <image src="../../../images/more.jpeg" class="slide-image" />
+        </view>
+        <view class="china">更多</view>
+        <view class='english'>more</view>
       </navigator>
     </swiper-item>
   </block>

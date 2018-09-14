@@ -18,18 +18,10 @@ Page({
     description: [],
     //专家团队轮播
     teamImgUrls: [],
-    teamPlay: false,
-    teamInterval: 5000,
-    teamDuration: 1000,
     teamCurrentLength: 0,
-    teamCircular: true,
     //专家团队轮播
     viewpointImgUrls: [],
-    viewpointPlay: true,
-    viewpointInterval: 5000,
-    viewpointDuration: 1000,
     viewpointCurrentLength: 0,
-    viewpointCircular: true,
   },
   swiperChange: function (e) {
     this.setData({
@@ -63,8 +55,9 @@ Page({
     });
   },
   gotoBuiltDetails: function (e) {
+    const that = this;
     wx.navigateTo({
-      url: `../../built/details/details?id=${e.currentTarget.dataset.ids}`,
+      url: `../../built/details/details?id=${e.currentTarget.dataset.ids}&type=1`,
     })
   },
   /**
