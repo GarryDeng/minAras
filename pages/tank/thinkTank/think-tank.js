@@ -86,7 +86,12 @@ Page({
       })
     });
   },
-
+  goToteamDetalis: function (e) {
+    // return console.log(e)
+    wx.navigateTo({
+      url: `../../tank/details/details?id=${e.currentTarget.dataset.ids}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

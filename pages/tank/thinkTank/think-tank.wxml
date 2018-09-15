@@ -31,7 +31,7 @@
   <!--轮播图start  -->
   <swiper class='swiper-team' circular="{{true}}" autoplay="{{false}}"   bindchange="teamChange" current="{{teamCurrentLength}}">
     <block wx:for="{{teamImgUrls}}" wx:key="{{item.id}}">
-      <swiper-item>
+      <swiper-item data-ids="{{item.id}}" bindtap="goToteamDetalis">
         <view>
           <view class='content-tatol'>
             <view class='img'>

@@ -78,7 +78,7 @@
     <view class="text">{{indexHomeBig.title}}</view>
     <view class="time-read clear">
       <view class="fr time">{{indexHomeBig.inputtime}}</view>
-      <view class="fr look"><image src="../../../../utils/images/read.png" /> {{indexHomeBig.views}}</view>
+      <view class="fr look"><image src="../../../utils/images/read.png" /> {{indexHomeBig.views}}</view>
     </view>
   </view>
   <view wx:for="{{indexHomeList}}" wx:key="{{item.id}}" data-ids="{{item.id}}" bindtap='gotoZuDetails'>
@@ -86,7 +86,7 @@
       <view class="fl case-text">
         <view class="text">{{item.title}}</view>
         <view class='time-look'>
-          <view class="fl look"><image src="../../../../utils/images/read.png" /> {{item.views}}</view>
+          <view class="fl look"><image src="../../../utils/images/read.png" /> {{item.views}}</view>
           <view class="fl time">{{item.inputtime}}</view>
         </view>
       </view>
@@ -99,10 +99,10 @@
 <view class="platform">
   <view class="city">智慧城市综合服务平台</view>
   <view class="supplier ">智慧城市项目一站式解决方案提供商</view>
-  <navigator class='new' url="../../me/feedback/feedback">
-    <image src='../../../../utils/images/color-change.png' />
+  <view class='new' url="../../me/feedback/feedback">
+    <image src='../../../utils/images/color-change.png' />
     立即咨询
-  </navigator>
+  </view>
 </view>
 
 <import src="../../common/nav" />
