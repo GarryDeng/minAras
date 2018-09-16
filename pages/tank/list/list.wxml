@@ -31,7 +31,7 @@
         <view class='position'>{{item.job[1]?item.job[1]:''}}</view>
       </view>
       <view class='title-label'>
-        <view class='icon' wx:for="{{item.scfx}}" wx:key="{{item}}">{{item}}</view>
+        <view class='icon' wx:if="{{!(index>=5)}}" wx:for="{{item.scfx}}" wx:key="{{item}}">{{item}}</view>
       </view>
     </view>
     <navigator class='get-more' url=''>更多></navigator>
@@ -39,26 +39,28 @@
 </view>
 
 <view class='list-class' wx:if="{{classShow}}">
-  <view class='close' bindtap='closeClass'>取消</view>
-  <view class='affirm' bindtap='affirmClass'>确定</view>
   <picker-view bindchange="bindChangeClass">
     <picker-view-column>
-      <view wx:for="{{classList}}" wx:key="{{item.id}}">{{item.name}}</view>
+      <view data-ids="">全部</view>
+      <view wx:for="{{classList}}" wx:key="{{item.id}}" data-ids="{{item.id}}">{{item.name}}</view>
     </picker-view-column>
   </picker-view>
+  <view class='close' bindtap='closeClass'>取消</view>
+  <view class='affirm' bindtap='affirmClass'>确定</view>
 </view>
 
 <view class='list-class-sid' wx:if="{{sIdShow}}" >
-  <view class='close' bindtap='closeSId'>取消</view>
-  <view class='affirm' bindtap='affirmSId'>确定</view>
   <picker-view bindchange="bindChangeSlid">
     <picker-view-column>
-      <view wx:for="{{sidList}}" wx:key="{{item.id}}">{{item.name}}</view>
+      <view data-ids="">全部</view>
+      <view wx:for="{{sidList}}" wx:key="{{item.id}}" data-ids="{{item.id}}">{{item.name}}</view>
     </picker-view-column>
     <!-- <picker-view-column>
       <view wx:for="{{listName}}" wx:key="{{item.id}}">{{item.name}}</view>
     </picker-view-column> -->
   </picker-view>
+  <view class='close' bindtap='closeClassShow'>取消</view>
+  <view class='affirm' bindtap='affirmClassHide'>确定</view>
 </view>
 
 <import src="../../common/nav" />

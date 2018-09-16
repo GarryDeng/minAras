@@ -1,3 +1,8 @@
+page,.details{
+  width: 750rpx;
+  position: relative;
+  overflow: hidden;
+}
 .details .banner{
   display: block;
   width: 710rpx;
@@ -20,6 +25,9 @@
 .details-content image{
   position: relative;
   left: -20rpx;
+}
+.details-content .title{
+  font-size: 34rpx;
 }
 .look-read{
   line-height: 44rpx;

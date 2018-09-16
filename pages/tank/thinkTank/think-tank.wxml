@@ -7,7 +7,7 @@
   </block>
 </swiper>
 <view class='dots'>
-  <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+  <block wx:if="{{!(imgUrls.length==1)}}" wx:for="{{imgUrls}}" wx:key="{{item.id}}">
     <view class='dot {{index == currentLength ? "active" : ""}}'></view>
   </block>
 </view>
@@ -47,7 +47,7 @@
               <view class='position'>{{item.job[1]?item.job[1]:''}}</view>
             </view>
             <view class='title-label'>
-              <view class='icon' wx:for="{{item.scfx}}" wx:key="{{item}}">{{item}}</view>
+              <view wx:if="{{!(index>=5)}}" class='icon' wx:for="{{item.scfx}}" wx:key="{{item}}">{{item}}</view>
             </view>
           </view>
           <navigator class='get-more' url='../../tank/details/details?id={{item.id}}'>更多></navigator>

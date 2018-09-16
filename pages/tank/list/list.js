@@ -15,6 +15,8 @@ Page({
     classShow: false,
     sIdShow: false,
     sidList: [],//专业
+    hSid: '',
+    hCid: '',
     keyword:'',
     isKyeword: false,
     // fsrtName: [],//一级名称
@@ -161,30 +163,57 @@ Page({
       }
     });
   },
+  closeClass: function (e) {
+    this.setData({
+      classShow: false,
+    })
+  },
+  affirmClass: function (e) {
+    const that = this;
+    that.setData({
+      classShow: false,
+      classId: that.data.hCid,
+      pageNumber: 0
+    });
+    that.getPageList(config.apiList.thinkTankExpertList, function (data) {//专家列表
+      that.setData({
+        listData: data.data
+      })
+    });
+  },
+  closeClassShow: function (e) {
+    this.setData({
+      sIdShow: false,
+    })
+  },
+  affirmClassHide: function (e) {
+    const that = this;
+    that.setData({
+      sIdShow: false,
+      sid: that.data.hSid,
+      pageNumber: 0
+    });
+    that.getPageList(config.apiList.thinkTankExpertList, (data) => {//专家列表
+      that.setData({
+        listData: data.data
+      })
+    });
+  },
   bindChangeClass: function (e) {
     var classListId = e.detail.value;
+    var a = classListId == 0 ? "" : this.data.classList[classListId - 1].id;
     this.setData({
-      classId: this.data.classList[classListId].id
-    });
+      hCid: a
+    })
+    console.log(a)
   },
   bindChangeSlid: function (e) {
     var classListId = e.detail.value;
+    var a = classListId == 0 ? "" : this.data.sidList[classListId - 1].id;
     this.setData({
-      sid: this.data.sidList[classListId].id
-    });
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
+      hSid: a
+    })
+    console.log(a)
   },
   /**
    * 页面上拉触底事件的处理函数

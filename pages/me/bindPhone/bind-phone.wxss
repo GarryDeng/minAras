@@ -65,7 +65,7 @@
   padding-bottom: 15rpx;
   height: 70rpx;
   border-radius: 6rpx;
-  border: 1rpx solid #d2d2d2;
+  border: 2rpx solid #d2d2d2;
   width: 100%;
   box-sizing: border-box;
 }

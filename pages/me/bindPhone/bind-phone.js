@@ -9,7 +9,7 @@ Page({
   data: {
     loginBoolean: true,
     userName: 'null',
-    userImg: '../../../utils/images/default-user.png',
+    userImg: '../../../images/default_user_head.png',
     phone: '',
     phoneHint: '',
     timeBoolean: '',
@@ -44,7 +44,7 @@ Page({
           timeBoolean: res.data[0],
           authCode: res.data[1],
           userName: res.data[2],
-          userImg: res.data[3] ? res.data[3] : '../../../utils/images/default-user.png',
+          userImg: res.data[3] ? res.data[3] : '../../../images/default_user_head.png',
           phone: res.data[4],
         })
       },
@@ -79,7 +79,7 @@ Page({
               that.setData({
                 userName: res.data.userdata.nickname,
                 authCode: res.data.auth_code,
-                userImg: res.data.userdata.headimgurl ? res.data.userdata.headimgurl : '../../../utils/images/default-user.png',
+                userImg: (!!!res.data.userdata.headimgurl) ? res.data.userdata.headimgurl : '../../../images/default_user_head.png',
                 phone: res.data.userdata.phone
               });
               that.getHisotyList();
@@ -110,7 +110,7 @@ Page({
           that.setData({
             userName: res.data.userdata.nickname,
             authCode: res.data.auth_code,
-            userImg: res.data.userdata.headimgurl ? res.data.userdata.headimgurl : '../../../utils/images/default-user.png',
+            userImg: res.data.userdata.headimgurl ? res.data.userdata.headimgurl : '../../../images/default_user_head.png',
             phone: res.data.userdata.phone
           });
           that.getHisotyList();

@@ -9,7 +9,7 @@
 <!-- 登录end -->
 <view wx:if="{{!loginBoolean}}">
   <view class='user-head'>
-    <image class='default-user' src='{{userImg}}'></image>
+    <image class='default-user' src='{{(!!!userImg)? "../../../images/default_user_head.png" : userImg}}'></image>
     <view class='user-name'>{{userName}}
     <!-- <image src='../../../utils/images/edit.png'></image> -->
     </view>

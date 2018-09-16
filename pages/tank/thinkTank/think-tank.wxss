@@ -4,15 +4,16 @@
   height: 400rpx;
   position: relative;
   margin: 0 auto;
-  box-shadow: 0 15rpx 15rpx #ccc;
   overflow: hidden;
   border-radius: 10rpx;
+  box-shadow:0 5rpx 15rpx 3rpx #ccc;
 }
 .swiper-content image{
   width: 710rpx;
   display: block;
   height: 400rpx;
   position: relative;
+  border-radius: 10rpx;
 }
 .dots{
   position: relative;
@@ -183,24 +184,31 @@
 }
 .swiper-team .title-label{
   font-size: 0;
+  width: 432rpx;
+  display: flex;
+  flex-wrap:wrap;
+  /* justify-content:space-between; */
 }
 .swiper-team .title-label .icon{
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 18rpx;
   line-height: 30rpx;
   padding: 0 18rpx;
   border: 1rpx solid #e2f4f9;
   border-radius: 6rpx;
   color: #666;
-  margin-left: 12rpx;
+  margin-right: 12rpx;
+  margin-bottom: 6rpx;
 }
 .swiper-team .title-label .icon:first-child{
   margin-left: 0;
 }
 .swiper-team .get-more{
-  margin-top: 22rpx;
+  /* margin-top: 22rpx; */
   font-size: 16rpx;
   float: right;
   color: #666;
-  margin-right: 40rpx;
+  right: 30rpx;
+  position: absolute;
+  bottom: 30rpx;
 }
