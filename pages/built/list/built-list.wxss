@@ -54,6 +54,17 @@
   height: 314rpx;
   width: 100%;
   display: block;
+  position: relative;
+  overflow: hidden;
+}
+.built-list .list .img image{
+  min-width: 100%;
+  min-height: 100%;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  display: block;
+  transform: translate(-50%,-50%);
 }
 .built-list .list:last-child{
   margin-bottom: 0;

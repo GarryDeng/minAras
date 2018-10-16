@@ -1,15 +1,14 @@
 <view class='nav'>
   <view class='nav-item'>
-    <view data-ids="1" bindtap='clickNav' class="nav-name {{navNumber == 1 ? 'active' : ''}}">咨询合作</view>
-    <view data-ids="2" bindtap='clickNav' class="nav-name {{navNumber == 2 ? 'active' : ''}}">入驻智库</view>
-    <view data-ids="3" bindtap='clickNav' class="nav-name {{navNumber == 3 ? 'active' : ''}}">意见反馈</view>
+    <view wx:for="{{description}}" wx:key="{{index}}" data-ids="{{index+1}}" bindtap='clickNav'
+     class="nav-name {{navNumber == (index+1) ? 'active' : ''}}">{{item.name}}</view>
+    <!-- <view data-ids="2" bindtap='clickNav' class="nav-name {{navNumber == 2 ? 'active' : ''}}">入驻智库</view>
+    <view data-ids="3" bindtap='clickNav' class="nav-name {{navNumber == 3 ? 'active' : ''}}">意见反馈</view> -->
   </view>
 </view>
-<view class="nav-icon">
-  <image class='bg' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
-  <!-- <view class='text'>
-    缺少参数 --- 缺少参数 --- 缺少参数 --- 缺少参数 --- 缺少参数-----缺少参数 --- 缺少参数 --- 缺少参数 --- 缺少参数缺少参数 --- 缺少参数 --- 缺少参数 --- 缺少参数缺少参数 --- 缺少参数 --- 缺少参数 --- 缺少参数
-  </view> -->
+<view class="nav-icon" wx:for="{{description}}" wx:key="{{index}}" wx:if="{{navNumber == (index+1)}}">
+  <image class='bg' src='{{item.image2}}'></image>
+  <view class='text'>{{item.description}}</view>
 </view>
 
 <view class='submint-form'>

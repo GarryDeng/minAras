@@ -12,7 +12,8 @@ Page({
     userName: '',
     phone: '',
     authCode: '',
-    content: ''
+    content: '',
+    description: [],
   },
   /**
    * 生命周期函数--监听页面加载
@@ -25,6 +26,24 @@ Page({
         that.setData({
           authCode: res.data[1]
         })
+      }
+    });
+    that.getBannerImage();
+  },
+  getBannerImage: function (e) {
+    const that = this;
+    app.postApiData(config.apiList.thinkTankDescription,{}, (data) => {
+      console.log(data)
+      if (data.ret == 100) {
+        that.setData({
+          description: data.data
+        })
+      } else {
+        wx.showToast({
+          title: data.message,
+          icon: 'none',
+          duration: 2000
+        });
       }
     });
   },
@@ -66,7 +85,6 @@ Page({
   },
   postFeedBack: function () {
     const that = this;
-    console.log(that.data.phone)
     if(that.data.phone==""||!that.isPhone(that.data.phone)){
       return wx.showToast({
         title: "手机格式错误",
@@ -111,5 +129,19 @@ Page({
         });
       }
     });
+  },
+  /**
+  * 页面相关事件处理函数--监听用户下拉动作
+  */
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh();
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '咨询合作',
+    }
   },
 })

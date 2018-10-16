@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "ARAS-登录",
+  "navigationBarTitleText": "个人中心",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

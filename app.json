@@ -1,36 +1,28 @@
 {
   "pages":[
     "pages/indexs/index/index",
+    "pages/indexs/details/details",
+    "pages/me/feedback/feedback",
     "pages/scheme/scheme/scheme",
-    
     "pages/tank/list/list",
     "pages/tank/thinkTank/think-tank",
     "pages/built/list/built-list",
-    
-    
     "pages/built/details/details",
     "pages/scheme/caseDetails/case-details",
-    
     "pages/scheme/case/case",
-    
-    
-    
-    
-    
-    "pages/me/feedback/feedback",
     "pages/me/bindPhone/bind-phone",
-    
     "pages/scheme/list/list",
     "pages/tank/details/details"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "ARAS",
+    "navigationBarTextStyle":"black",
+    "navitionStyle":"custom"
   },
   "tabBar": {
-    "borderStyle": "white",
+    "borderStyle": "block",
     "color": "#b8b8b8",
     "selectedColor": "#333",
     "backgroundColor": "#fff",

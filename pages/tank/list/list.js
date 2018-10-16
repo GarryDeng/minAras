@@ -16,9 +16,13 @@ Page({
     sIdShow: false,
     sidList: [],//专业
     hSid: '',
+    vSid: [0],
+    tSid: '专业',
+    tCid: '全部',
     hCid: '',
+    vCid: [0],
     keyword:'',
-    isKyeword: false,
+    isKeyword: "",
     // fsrtName: [],//一级名称
     // listName: [],//二级名称
   },
@@ -33,6 +37,7 @@ Page({
     })
   },
   clickSId: function () {
+    // console.log(this.data.vCid, this.data.vSid)
     this.setData({
       sIdShow: true
     })
@@ -57,7 +62,7 @@ Page({
     this.setData({
       classShow: false,
       pageNumber: 0,
-      isKyeword: false,
+      isKeyword: "",
     });
     that.getPageList(config.apiList.thinkTankExpertList, function (data) {//专家列表
       that.setData({
@@ -80,7 +85,7 @@ Page({
     this.setData({
       sIdShow: false,
       pageNumber: 0,
-      isKyeword: false,
+      isKeyword: "",
     });
     that.getPageList(config.apiList.thinkTankExpertList, function (data) {//专家列表
       that.setData({
@@ -118,18 +123,14 @@ Page({
         duration: 2000
       });
     }
-    app.getApiData(config.apiList.thinkTankExpertList, { kyeword:that.data.keyword}, function (data) {
-      if (data.ret == 100) {
-        that.setData({
-          listData: data.data
-        })
-      } else {
-        wx.showToast({
-          title: data.message,
-          icon: 'none',
-          duration: 2000
-        });
-      }
+    that.setData({
+      isKeyword: that.data.keyword,
+      pageNumber: 0,
+    })
+    that.getPageList(config.apiList.thinkTankExpertList, (data) => {//专家列表
+      that.setData({
+        listData: data.data
+      })
     });
   },
   getPageList: function (url,callback) {
@@ -137,7 +138,7 @@ Page({
     that.setData({
       pageNumber: Number(that.data.pageNumber) + 1
     })
-    app.getApiData(url, { page: that.data.pageNumber, cid: that.data.classId, sid: that.data.sid}, function (data) {
+    app.getApiData(url, { page: that.data.pageNumber, cid: that.data.classId, sid: that.data.sid, keyword: that.data.isKeyword}, (data) => {
       if (data.ret == 100) {
         callback(data);
       } else {
@@ -172,8 +173,12 @@ Page({
     const that = this;
     that.setData({
       classShow: false,
+      sIdShow: false,
       classId: that.data.hCid,
-      pageNumber: 0
+      tCid: that.data.tCid,
+      vCid: that.data.vCid,
+      pageNumber: 0,
+      isKeyword: "",
     });
     that.getPageList(config.apiList.thinkTankExpertList, function (data) {//专家列表
       that.setData({
@@ -190,8 +195,12 @@ Page({
     const that = this;
     that.setData({
       sIdShow: false,
+      classShow: false,
       sid: that.data.hSid,
-      pageNumber: 0
+      tSid: that.data.tSid,
+      vSid: that.data.vSid,
+      pageNumber: 0,
+      isKeyword: "",
     });
     that.getPageList(config.apiList.thinkTankExpertList, (data) => {//专家列表
       that.setData({
@@ -202,27 +211,30 @@ Page({
   bindChangeClass: function (e) {
     var classListId = e.detail.value;
     var a = classListId == 0 ? "" : this.data.classList[classListId - 1].id;
+    this.data.tCid = classListId == 0 ? "全部" : this.data.classList[classListId - 1].name;
+    this.data.vCid = classListId
     this.setData({
-      hCid: a
+      hCid: a,
+      vCid : classListId
     })
-    console.log(a)
+    console.log(classListId, this.data.vCid)
   },
   bindChangeSlid: function (e) {
     var classListId = e.detail.value;
     var a = classListId == 0 ? "" : this.data.sidList[classListId - 1].id;
+    this.data.tSid = classListId == 0 ? "专业" : this.data.sidList[classListId - 1].name;
+    this.data.vSid = classListId
     this.setData({
-      hSid: a
+      hSid: a,
+      vSid: classListId,
     })
-    console.log(a)
+    console.log(classListId, this.data.vSid)
   },
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
     var that = this;
-    if (that.data.isKyeword) {
-      return false;
-    }
     that.getPageList(config.apiList.thinkTankExpertList, function (data) {//专家列表
       var listData = that.data.listData;
       console.log(listData)
@@ -234,11 +246,18 @@ Page({
       })
     });
   },
-
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh();
+  },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: '智库·专家列表'
+    }
   }
 })

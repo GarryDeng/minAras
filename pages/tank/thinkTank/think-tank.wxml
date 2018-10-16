@@ -17,7 +17,7 @@
 
 <view class='service-introduction'>
   <view class='tank-service' wx:for="{{description}}" wx:key="{{item.enname}}">
-    <image class='icon' src='{{item.image2}}' />
+    <image class='icon' src='{{item.image}}' />
     <view class='title'>{{item.name}}</view>
     <view class='content'>{{item.description}}</view>
   </view>
@@ -26,8 +26,8 @@
     业务咨询
   </navigator>
 </view>
-<view class='tank-title'>ARAS <text>专家团队</text></view>
-<view class='team-content-bottom'>
+<view class='tank-title team-content-bottom'>ARAS <text>专家团队</text></view>
+<view class=''>
   <!--轮播图start  -->
   <swiper class='swiper-team' circular="{{true}}" autoplay="{{false}}"   bindchange="teamChange" current="{{teamCurrentLength}}">
     <block wx:for="{{teamImgUrls}}" wx:key="{{item.id}}">
@@ -50,7 +50,7 @@
               <view wx:if="{{!(index>=5)}}" class='icon' wx:for="{{item.scfx}}" wx:key="{{item}}">{{item}}</view>
             </view>
           </view>
-          <navigator class='get-more' url='../../tank/details/details?id={{item.id}}'>更多></navigator>
+          <view class='get-more'>更多></view>
         </view>
       </swiper-item>
     </block>
@@ -66,7 +66,7 @@
     找专家
   </navigator>
 </view>
-<view wx:if="{{viewpointImgUrls.length>0}}" class='tank-title'>ARAS <text>专家观点</text></view>
+<view wx:if="{{viewpointImgUrls.length>0}}" class='tank-title team-content-bottom'>ARAS <text>专家观点</text></view>
 <view wx:if="{{viewpointImgUrls.length>0}}">
   <!--轮播图start  -->
   <swiper class='swiper-content' circular="{{true}}" autoplay="{{false}}"  bindchange="viewpointChange" current="{{viewpointCurrentLength}}">

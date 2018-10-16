@@ -1,7 +1,7 @@
 <!--轮播图start  -->
 <swiper class='swiper-content' circular="{{circular}}" autoplay="{{autoplay}}"  bindchange="swiperChange" current="{{currentLength}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
-    <swiper-item data-ids="{{item.id}}" bindtap='gotoZuDetails'>
+    <swiper-item data-ids="{{item.description}}" bindtap='gotoZuDetails'>
       <image src="{{item.image}}" class="slide-image"/>
     </swiper-item>
   </block>
@@ -68,7 +68,7 @@
 <!-- 产品轮播图end -->
 <view class="line-to-bottom">
   <view class='specialist-head'>
-    <view class="fl">筑享汇</view>
+    <view class="fl">筑享慧万家</view>
     <navigator class="fr" url="../../built/list/built-list">更多></navigator>
   </view>
   <view class="remit-list" data-ids="{{indexHomeBig.id}}" bindtap='gotoZuDetails'>
@@ -97,8 +97,8 @@
   </view>
 </view>
 <view class="platform">
-  <view class="city">智慧城市综合服务平台</view>
-  <view class="supplier ">智慧城市项目一站式解决方案提供商</view>
+  <view class="city">智慧城市综合资源平台</view>
+  <view class="supplier ">解决方案提供商</view>
   <navigator class='new' url="../../me/feedback/feedback">
     <image src='../../../utils/images/color-change.png' />
     立即咨询

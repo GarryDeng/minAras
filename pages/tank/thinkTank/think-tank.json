@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "ARAS-智库",
+  "navigationBarTitleText": "智库",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

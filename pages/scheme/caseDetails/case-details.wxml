@@ -18,7 +18,7 @@
   </view>
 </view>
 
-<view class='partner'>
+<view class='partner' wx:if="{{caseData.length<=0}}">
   <view class='title-bar'>服务支持企业</view>
   <view class='link-list' wx:for="{{caseData.brands}}" wx:key="{{item.id}}">
     <view class='title'>{{item.name}}</view>

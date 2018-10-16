@@ -1,7 +1,18 @@
 <import src="../../../wxParse/wxParse.wxml" />
-<!-- <block wx:for="{{replyTemArray}}" wx:key="">
-    回复{{index}}:<template is="wxParse" data="{{wxParseData:item}}"/>
-</block> -->
+<!--轮播图start  -->
+<swiper class='swiper-content' bindchange="swiperChange" current="{{currentLength}}" >
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item data-ids="{{index}}">
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='dots' wx:if="{{!(imgUrls.length == 1)}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+    <view class='dot {{index == currentLength ? "active" : ""}}'></view>
+  </block>
+</view>
+<!--轮播图end  -->
 <view>
   <view class='case-list' wx:for="{{replyTemArray}}" wx:key="{{index}}">
     <!-- <image class='img' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image> -->
@@ -13,7 +24,7 @@
   </view>
 </view>
 <view class='constitute' bindtap='gotoWindowIcon' data-caseId = "{{caseId}}" >
-  <image src='../../../utils/images/radius-change.png'></image>
+  <image src='../../../utils/images/exchange.png'></image>
   <!-- <view class='text'>系统</view>
   <view>构成</view> -->
 </view>

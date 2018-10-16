@@ -11,6 +11,8 @@ Page({
     contentDatails: [],
     caseId: "",
     arrTitle: [],
+    imgUrls:[],
+    currentLength: 0,
   },
 
   /**
@@ -26,7 +28,7 @@ Page({
     that.getContentDetails(config.apiList.schemeBannerId,{id:options.id},function(data){
       data.data.funtions.forEach((res)=>{
         that.data.arrTitle.push({name:res.name,id:res.id})
-        console.log(res)
+        // console.log(res)
         replyArr.push(res.content.replace(/[\\]/g,''));
       });
       for (let i = 0; i < replyArr.length; i++) {
@@ -36,6 +38,7 @@ Page({
         }
       }
       that.setData({
+        imgUrls: data.data.banner_img,        
         contentDatails: data.data,
         arrTitle: that.data.arrTitle
       })
@@ -59,6 +62,11 @@ Page({
         });
       }
     });
+  },
+  swiperChange: function (e) {
+    this.setData({
+      currentLength: e.detail.current
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -92,7 +100,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -106,6 +114,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: '解决方案·方案详情'
+    }
   }
 })

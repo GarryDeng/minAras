@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "小筑理-专家列表",
+  "navigationBarTitleText": "智库·专家列表",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

@@ -82,7 +82,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -96,6 +96,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: '智慧配套·配套详情'
+    }
   }
 })

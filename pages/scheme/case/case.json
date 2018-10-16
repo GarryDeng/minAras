@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "ARAS-功能点",
+  "navigationBarTitleText": "解决方案·方案详情",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

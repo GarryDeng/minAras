@@ -1,33 +1,34 @@
 <import src="../../../wxParse/wxParse.wxml" />
-
-<view class='details'>
-  <image class='banner' src='{{pageData.min_img}}'></image>
-  <view class='details-content'>
-    <view class='title'>{{pageData.title}}</view>
-    <view class='look-read'>
-      <view class='fl look'><image src='../../../utils/images/read.png'></image> {{pageData.views}}</view>
-      <view class='fl'>{{pageData.inputtime?pageData.inputtime:pageData.addtime}}</view>
-    </view>
-    <view class='text'>
-      <template is="wxParse" data="{{wxParseData:builtDetails.nodes}}"/>
+<scroll-view class='scroll-y' style='height:{{height-100}}rpx' scroll-y="true">
+  <view class='details'>
+    <image class='banner' src='{{pageData.min_img}}'></image>
+    <view class='details-content'>
+      <view class='title'>{{pageData.title}}</view>
+      <view class='look-read'>
+        <view class='fl look'><image src='../../../utils/images/read.png'></image> {{pageData.views}}</view>
+        <view class='fl'>{{pageData.inputtime?pageData.inputtime:pageData.addtime}}</view>
+      </view>
+      <view class='text'>
+        <template is="wxParse" data="{{wxParseData:builtDetails.nodes}}"/>
+      </view>
     </view>
   </view>
-</view>
+</scroll-view>
 <view wx:if="{{typeId!=1}}" class='pev-next'>
   <view class='list-fixed'>
-    <navigator class='fl page' open-type="redirect" url='../details/details?id={{pageData.pre_id}}'>
+    <view class='fl page' bindtap='pverPage'>
       <image src='../../../utils/images/left.png'></image>
       上一篇
-    </navigator>
+    </view>
     <view class='like-number' bindtap='clickLike'>
       <image wx:if="{{pageData.is_like!=0}}" class='like' src='../../../utils/images/like.png'></image>
       <image wx:if="{{pageData.is_like==0}}" class='like' src='../../../utils/images/not-like.png'></image>
       
-      {{pageData.views}}
+      {{pageData.is_like}}
     </view>
-    <navigator class='fr page' open-type="redirect" url='../details/details?id={{pageData.next_id}}'>
+    <view bindtap='nextPage' class='fr page'>
       <image src='../../../utils/images/right.png'></image>
       下一篇
-    </navigator>
+    </view>
   </view>
 </view>

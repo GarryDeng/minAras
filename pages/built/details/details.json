@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "ARAS-筑汇享详情",
+  "navigationBarTitleText": "资讯详情",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

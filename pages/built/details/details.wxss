@@ -62,7 +62,7 @@ page,.details{
 }
 .list-fixed{
   padding: 0 20rpx;
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   height: 100rpx;
@@ -100,4 +100,8 @@ page,.details{
   padding-top: 22rpx;
   width: 38rpx;
   height: 38rpx;
+}
+.scroll-y{
+  position: relative;
+  height: 100%;
 }

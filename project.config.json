@@ -21,13 +21,29 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "scheme",
+					"pathName": "pages/scheme/scheme/scheme",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "built",
+					"pathName": "pages/built/list/built-list"
+				}
+			]
 		}
 	}
 }

@@ -33,7 +33,12 @@ Page({
     const that = this;
     app.getApiData(config.apiList.thinkTankExpertInfo, { id:opid }, function (data) {
       if (data.ret == 100) {
-        console.log(data)
+        // console.log(data.data.top_img)
+        // var img = new Image();
+        // img.src = data.data.top_img;
+        // img.onLoad = () => {
+        //   console.log(img.width)
+        // }
         that.setData({
           pageData: data.data
         })
@@ -53,9 +58,17 @@ Page({
     })
   },
   /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh();
+  },
+  /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: '智库·专家详情'
+    }
   }
 })

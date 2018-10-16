@@ -36,6 +36,7 @@
   padding-top: 38rpx;
   font-size: 20rpx;
   padding-bottom: 38rpx;
+  padding-right: 18rpx;
 }
 .details-function{
   border-bottom: 20rpx solid #ededed;
@@ -50,7 +51,7 @@
   border: none;
 }
 .details-function .function-list .function{
-  font-size: 28rpx;
+  font-size: 38rpx;
   padding-top: 20rpx;
   line-height: 92rpx;
 }

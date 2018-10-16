@@ -1,5 +1,5 @@
 {
   "navigationBarTitleText": "ARAS-提交记录",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

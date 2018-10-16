@@ -1,13 +1,13 @@
 <view class='user-message'>
   <view class='banner'>
-    <image src='{{pageData.top_img}}'></image>
+    <image src='{{pageData.top_img}}' mode="aspectFit"></image>
   </view>
   <view class='name'>{{pageData.name}}</view>
   <!-- <view class='address'>
     <image src='../../../utils/images/address.png'></image>
     广东省 · 深圳市
   </view> -->
-  <view class='position'>{{pageData.jobs[0]}}</view>
+  <view class='position' wx:for="{{pageData.jobs}}" wx:key="{{index}}">{{item}}</view>
 </view>
 
 <view class='details-city-list'>
@@ -40,14 +40,14 @@
   <!--轮播图end  -->
 </view>
 
-<view class='details-city-list'>
+<view class='details-city-list' wx:if="{{pageData.description.length>0}}">
   <view class='details-label'>
     <view class='fl label'>专家介绍</view>
   </view>
   <view class='introduce line'>{{pageData.description}}</view>
 </view>
 
-<view class='details-city-list'>
+<view class='details-city-list' wx:if="{{pageData.experience.length>0}}">
   <view class='details-label'>
     <view class='fl label'>项目经历</view>
   </view>
@@ -61,7 +61,7 @@
   </view>
 </view>
 
-<view class='swiper-list details-city-list'>
+<view class='swiper-list details-city-list' wx:if="{{pageData.achievement.length>0}}">
   <view class='details-label'>
     <view class='fl label'>成就荣誉</view>
   </view>

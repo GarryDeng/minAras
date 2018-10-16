@@ -6,7 +6,9 @@
 
 <view class='built-list' style='{{optionsId==1? "margin-top:0" : ""}}'>
   <view class='list' wx:for="{{builtContent}}" wx:key="{{item.id}}">
-    <image bindtap="goToContent" data-ids="{{item.id}}" class='img' src='{{item.min_img?item.min_img:item.thumb}}'></image>
+    <view class='img'>
+      <image bindtap="goToContent" mode="aspectFill" data-ids="{{item.id}}" src='{{item.min_img?item.min_img:item.thumb}}'></image>
+    </view>
     <view bindtap="goToContent" data-ids="{{item.id}}" class='text'>{{item.title}}</view>
     <view bindtap="goToContent" data-ids="{{item.id}}" class='time-look'>
       <view class='fr'>{{item.inputtime?item.inputtime:item.addtime}}</view>

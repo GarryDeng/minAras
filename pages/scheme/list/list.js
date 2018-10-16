@@ -8,6 +8,7 @@ Page({
    */
   data: {
     listData: [],
+    height: '',
   },
 
   /**
@@ -15,6 +16,13 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          height: res.windowHeight/res.windowWidth*750
+        })
+      }
+    })
     app.getApiData(config.apiList.schemewindowId, {id:options.id}, function (data) {
       if (data.ret == 100) {
         that.setData({
@@ -67,7 +75,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -81,6 +89,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: '智慧配套'
+    }
   }
 })

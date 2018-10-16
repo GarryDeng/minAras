@@ -113,9 +113,9 @@
   height: 67rpx;
   z-index: -1;
 }
-.service-introduction,.team-content-bottom{
+.team-content-bottom{
   /* padding-bottom: 48rpx; */
-  border-bottom: 20rpx solid #ededed;
+  border-top: 20rpx solid #ededed;
 }
 .swiper-team{
   width: 710rpx;

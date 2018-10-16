@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "ARAS-咨询",
+  "navigationBarTitleText": "咨询合作",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

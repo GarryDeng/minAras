@@ -2,8 +2,7 @@
   <image src='../../../utils/images/scheme-banner.png'></image>
   <view class='text'>{{listData.name}}</view>
 </view>
-
-<view class='case-list'>
+<view class='case-list' style='min-height:{{height-364-76-20}}rpx;'>
   <view class='case' wx:for="{{listData.system}}" wx:key="{{item.id}}" data-ids="{{item.id}}" bindtap='gotoDetails'>
     <image class='icon' src='{{item.image}}'></image>
     <view class='window'>{{item.name}}</view>

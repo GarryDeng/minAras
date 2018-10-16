@@ -28,6 +28,7 @@ Page({
     indexHomeList:[],
   },
   gotoZuDetails: function (e) {
+    if (!e.currentTarget.dataset.ids) return false;
     wx.navigateTo({
       url: `../../built/details/details?id=${e.currentTarget.dataset.ids}`,
     })
@@ -50,11 +51,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    that.getBanner(config.apiList.indexBanner, function (data) {//banner轮播
-      that.setData({
-        imgUrls: data.data
-      })
-    });
     that.getBanner(config.apiList.indexExpert,function(data){//专家轮播
       that.setData({
         listImgUrls: data.data,
@@ -111,7 +107,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    const that = this;
+    that.getBanner(config.apiList.indexBanner, function (data) {//banner轮播
+      that.setData({
+        imgUrls: data.data
+      })
+    });
   },
 
   /**
@@ -132,7 +133,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -146,6 +147,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: "ARAS"
+    }
   }
 })

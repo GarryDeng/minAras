@@ -17,6 +17,7 @@ Page({
     codeVal: '',
     authCode: '',
     codeHintMessage:'获取验证码',
+    isPostPhone: false,
     activeClass: true,
     oldPhone: '',
     postHistoryList: [],
@@ -79,7 +80,7 @@ Page({
               that.setData({
                 userName: res.data.userdata.nickname,
                 authCode: res.data.auth_code,
-                userImg: (!!!res.data.userdata.headimgurl) ? res.data.userdata.headimgurl : '../../../images/default_user_head.png',
+                userImg: res.data.userdata.headimgurl ? res.data.userdata.headimgurl : '../../../images/default_user_head.png',
                 phone: res.data.userdata.phone
               });
               that.getHisotyList();
@@ -136,7 +137,7 @@ Page({
   pageStateBoolean: function () {
     const that = this;
     wx.setNavigationBarTitle({
-      title: 'ARAS-绑定手机'
+      title: '个人中心'
     });
     that.setData({
       loginBoolean: false
@@ -213,6 +214,9 @@ Page({
         duration: 2000
       });
     }
+    if(that.data.isPostPhone) {
+      return false;
+    }
     var typeState = that.data.phone ? 4 : 3;
     wx.showLoading({
       title: '获取中',
@@ -223,6 +227,9 @@ Page({
         icon: 'none',
         duration: 2000
       });
+      that.setData({
+        isPostPhone: true
+      })
       let i = 60;
       var getTi = setInterval(()=>{
         that.setData({
@@ -230,7 +237,8 @@ Page({
         })
         if (i == 0) {
           that.setData({
-            codeHintMessage: '重新获取'
+            codeHintMessage: '重新获取',
+            isPostPhone: false
           })
           clearInterval(getTi);
         }
@@ -323,9 +331,24 @@ Page({
       })
     });
   },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.getHisotyList();
+    wx.stopPullDownRefresh();
+  },
   falseClick: function () {
     this.setData({
       activeClass: false
     })
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '个人中心',
+    }
   },
 })

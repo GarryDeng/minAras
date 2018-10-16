@@ -50,6 +50,7 @@
   font-size: 22rpx;
   color: #000;
   opacity: .5;
+  padding-left: 38rpx;
 }
 .swiper-specialist{
   padding-top: 18rpx;
@@ -99,7 +100,7 @@
   position: relative;
   border-radius: 12rpx;
   /* overflow: hidden; */
-  border: 1rpx solid #CCC;
+  /* border: 1rpx solid #CCC; */
   box-shadow: 0 3rpx 8rpx 3rpx #ccc;
 }
 .swiper-product .list .img{
@@ -109,6 +110,9 @@
 .swiper-product .list .img image{
   height: 100%;
   width: 100%;
+  display: block;
+  border-top-left-radius: 12rpx;
+  border-top-right-radius: 12rpx;
 }
 .swiper-product .list .china{
   text-align: center;
@@ -220,8 +224,8 @@
 }
 .platform .new{
   position: absolute;
-  right: 66rpx;
-  top: 60rpx;
+  right: 28rpx;
+  top: 22rpx;
   width: 180rpx;
   height: 51rpx;
   line-height: 51rpx;
@@ -230,12 +234,13 @@
   color: #FFF;
   font-size: 24rpx;
   z-index: 9;
+  padding: 38rpx;
 }
 .platform .new image{
   position: absolute;
   width: 180rpx;
   height: 51rpx;
   z-index: -1;
-  left: 0;
-  top: 0;
+  left: 38rpx;
+  top: 38rpx;
 }

@@ -5,11 +5,11 @@
   </view>
   <view class='nav-list'>
     <view class='class-name' bindtap="clickClass">
-      分类
+      {{tCid}}
       <image src='../../../utils/images/arrow-down.png'></image>
     </view>
     <view class='class-name' bindtap='clickSId'>
-      专业
+      {{tSid}}
       <image src='../../../utils/images/arrow-down.png'></image>
     </view>
   </view>
@@ -39,9 +39,9 @@
 </view>
 
 <view class='list-class' wx:if="{{classShow}}">
-  <picker-view bindchange="bindChangeClass">
+  <picker-view bindchange="bindChangeClass" value="{{vCid}}">
     <picker-view-column>
-      <view data-ids="">全部</view>
+      <view data-ids="0">全部</view>
       <view wx:for="{{classList}}" wx:key="{{item.id}}" data-ids="{{item.id}}">{{item.name}}</view>
     </picker-view-column>
   </picker-view>
@@ -50,9 +50,9 @@
 </view>
 
 <view class='list-class-sid' wx:if="{{sIdShow}}" >
-  <picker-view bindchange="bindChangeSlid">
+  <picker-view bindchange="bindChangeSlid" value="{{vSid}}">
     <picker-view-column>
-      <view data-ids="">全部</view>
+      <view data-ids="0">全部</view>
       <view wx:for="{{sidList}}" wx:key="{{item.id}}" data-ids="{{item.id}}">{{item.name}}</view>
     </picker-view-column>
     <!-- <picker-view-column>

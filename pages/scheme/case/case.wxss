@@ -1,5 +1,42 @@
 @import "../../common/nav.wxss";
 @import "../../../wxParse/wxParse.wxss";
+.swiper-content{
+  width: 710rpx;
+  height: 400rpx;
+  position: relative;
+  margin: 0 auto;
+  box-shadow:0 5rpx 15rpx 3rpx #ccc;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.swiper-content image{
+  width: 710rpx;
+  display: block;
+  height: 400rpx;
+  position: relative;
+  border-radius: 10rpx;
+}
+.dots{
+  position: relative;
+  padding-top: 26rpx;
+  padding-bottom: 28rpx;
+  width: 750rpx;
+  /* display: flex; */
+  font-size: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.dots .dot{
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 16rpx;
+  display: inline-block;
+}
+.dots .dot.active{
+  background-color: #070707;
+}
 .case-list{
   border-top: 20rpx solid #ededed;
   padding: 48rpx 20rpx;
@@ -13,7 +50,7 @@
 .case-list .function{
   padding-top: 10rpx;
   line-height: 100rpx;
-  font-size: 28rpx;
+  font-size: 38rpx;
 }
 .case-list .text{
   font-size: 20rpx;

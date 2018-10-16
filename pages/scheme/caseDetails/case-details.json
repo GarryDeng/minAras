@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "ARAS-智慧配套详情",
+  "navigationBarTitleText": "智慧配套·配套详情",
   "backgroundTextStyle": "dark",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

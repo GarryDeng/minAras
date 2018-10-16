@@ -10,9 +10,8 @@ Page({
     imgUrls: [],
     autoplay: true,
     interval: 5000,
-    duration: 1000,
+    duration: 600,
     currentLength: 0,
-    circular: true,
   },
   swiperChange: function (e) {
     this.setData({
@@ -24,10 +23,12 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
-    that.getBanner(config.apiList.schemeBanner, function (data) {
-      that.setData({
-        imgUrls: data.data
-      })
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          height: res.windowHeight / res.windowWidth * 750
+        })
+      }
     })
   },
   getBanner: function (url, callback) {
@@ -45,8 +46,9 @@ Page({
     });
   },
   goToNext: function (event) {
+    console.log(event)
     wx.navigateTo({
-      url: '../case/case?id=' + event.target.dataset.ids,
+      url: '../case/case?id=' + event.currentTarget.dataset.ids,
     })
   },
   /**
@@ -60,7 +62,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    const that = this;
+    that.getBanner(config.apiList.schemeBanner, function (data) {
+      that.setData({
+        imgUrls: data.data
+      })
+    });
   },
 
   /**
@@ -81,7 +88,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    wx.stopPullDownRefresh();
   },
 
   /**
@@ -95,6 +102,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: '解决方案'
+    }
   }
 })
